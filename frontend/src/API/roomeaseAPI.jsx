@@ -29,6 +29,10 @@ export const fetchUserInfo = username => {
   return axios.get(`/getRoutes/getUserInfo/${username}`);
 };
 
+export const fetchAllApartmentTasks = apt_id => {
+  return axios.get(`/getRoutes/getAllCompletedTasksAndRecurring/${apt_id}`);
+}
+
 // register user
 export const createUser = (first_name, last_name, username, password, gender, email, phone) => {
   return axios.post(`/user/createUser`, {

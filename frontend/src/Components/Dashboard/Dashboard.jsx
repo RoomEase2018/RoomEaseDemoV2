@@ -4,7 +4,8 @@ import {
 		fetchAllActiveTasks, 
 		fetchAllActiveRecurringTasks, 
 		fetchAllVisibleNotes,
-		fetchAllApartmentGoals
+		fetchAllApartmentGoals,
+    fetchAllCompletedTasks
 	} from "./Actions/DashboardActions";
 
 import UpNextContainer from "./Containers/UpNextContainer";
@@ -24,16 +25,21 @@ const mapDispatchToProps = dispatch => {
     },
     fetchAllApartmentGoals: aptid => {
     	dispatch(fetchAllApartmentGoals(aptid));
+    },
+    fetchAllCompletedTasks: aptid => {
+      dispatch(fetchAllCompletedTasks(aptid));
     }
   }
 }
 
 const mapStateToProps = state => {
   return {
-    allActiveTasks: state.Dashboard.allActiveTasks,
-    allActiveExpenses: state.Dashboard.allActiveExpenses,
+    tasks: state.Dashboard.tasks,
+    recurringTasks: state.Dashboard.recurringTasks,
     notes: state.Dashboard.notes,
-    goals: state.Dashboard.goals
+    goals: state.Dashboard.goals,
+    completedTasks: state.Dashboard.completedTasks,
+    successQueries: state.Dashboard.successQueries
   };
 };
 
@@ -45,9 +51,11 @@ class Dashboard extends Component {
 		props.fetchAllActiveRecurringTasks(1);
 		props.fetchAllVisibleNotes(1);
 		props.fetchAllApartmentGoals(1);
+    props.fetchAllCompletedTasks(1);
 	}
 
   render() {
+    console.log(this.props);
     return (
       <div className="dashboard">
         <UpNextContainer />

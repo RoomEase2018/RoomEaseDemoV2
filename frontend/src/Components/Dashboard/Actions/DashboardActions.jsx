@@ -5,9 +5,17 @@ export const SET_ALL_ACTIVE_RECURRING_TASKS = "SET_ALL_ACTIVE_RECURRING_TASKS"
 export const SET_ALL_VISIBLE_NOTES = "SET_ALL_VISIBLE_NOTES"
 export const SET_ALL_ACTIVE_GOALS = "SET_ALL_ACTIVE_GOALS"
 export const PUSH_SUCCESS_QUERY_ARRAY = "PUSH_SUCCESS_QUERY_ARRAY"
+export const SET_ALL_COMPLETED_TASKS = "SET_ALL_COMPLETED_TASKS"
 
 
 // action creators
+const setAllCompletedTasks = tasks => {
+  return {
+    type: SET_ALL_COMPLETED_TASKS,
+    tasks
+  }
+}
+
 const setAllActiveTasks = tasks => {
   return {
     type: SET_ALL_ACTIVE_TASKS,
@@ -43,6 +51,8 @@ const pushSuccessQueryArray = query => {
   }
 }
 
+
+ 
 // thunk functions
 export const fetchAllActiveTasks = aptid => dispatch => {
   return api.fetchAllActiveApartmentTasks(aptid).then(tasks => {
@@ -71,3 +81,11 @@ export const fetchAllApartmentGoals = aptid => dispatch => {
     dispatch(pushSuccessQueryArray('fetchAllApartmentGoals'));
   });
 };
+
+export const fetchAllCompletedTasks = aptid => dispatch => {
+  return api.fetchAllApartmentTasks(aptid).then(tasks => {
+    dispatch(setAllCompletedTasks(tasks.data.data));
+    dispatch(pushSuccessQueryArray('fetchAllCompletedTasks'));
+  });
+};
+
