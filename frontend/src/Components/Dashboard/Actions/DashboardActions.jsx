@@ -83,7 +83,7 @@ export const fetchAllApartmentGoals = aptid => dispatch => {
 };
 
 export const fetchAllCompletedTasks = aptid => dispatch => {
-  return api.fetchAllApartmentTasks(aptid).then(tasks => {
+  return api.fetchAllCompletedApartmentTasks(aptid).then(tasks => {
     dispatch(setAllCompletedTasks(tasks.data.data));
     dispatch(pushSuccessQueryArray('fetchAllCompletedTasks'));
   });
