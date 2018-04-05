@@ -88,6 +88,7 @@ class UpNextContainer extends Component {
 
   render() {
     const { successQueries, sortedTasks } = this.props;
+    console.log(sortedTasks, this.state.index)
     if ( !successQueries.fetchAllActiveTasks ||
       !successQueries.fetchAllActiveRecurringTasks ||
       !successQueries.fetchAllApartmentGoals 
