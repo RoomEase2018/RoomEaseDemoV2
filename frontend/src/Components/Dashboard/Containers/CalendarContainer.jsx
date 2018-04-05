@@ -35,7 +35,7 @@ class Calendar extends Component {
         })
       })
       return (
-        <div>
+        <div className='calendar' >
           <BigCalendar
             events={events}
             views={["week", "month", "agenda"]}
