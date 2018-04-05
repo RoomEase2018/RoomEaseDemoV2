@@ -4,21 +4,7 @@ import Progressbar from "../Components/Progressbar";
 import Checkbox from "../Components/Checkbox";
 import NextTask from "../Components/NextTask";
 import axios from "axios";
-import { updateSortedTasks, setSortedTasks, pushSuccessQueryArray } from "../Actions/DashboardActions";
 
-const mapDispatchToProps = dispatch => {
-  return {
-    updateSortedTasks: (arr, arr_type, index) => {
-      dispatch(updateSortedTasks(arr, arr_type, index));
-    },
-    setSortedTasks: (arr) => {
-      dispatch(setSortedTasks(arr));
-    },
-    pushSuccessQueryArray: (str) => {
-      dispatch(pushSuccessQueryArray(str))
-    }
-  }
-}
 
 const mapStateToProps = state => {
   return {
@@ -26,7 +12,6 @@ const mapStateToProps = state => {
     recurringTasks: state.Dashboard.recurringTasks,
     expenses: state.Dashboard.expenses,
     recurringExpenses: state.Dashboard.recurringExpenses,
-    sortedTasks: state.Dashboard.sortedTasks,
     goals: state.Dashboard.goals,
     successQueries: state.Dashboard.successQueries
   };
@@ -36,35 +21,114 @@ class UpNextContainer extends Component {
   constructor() {
     super();
 
+    this.sortedTasks = []
+
     this.state = {
-      index: 0
+      index: 0,
+      isSorted: false,
+      completed: false
     }
   }
 
-  // GOOD
   handleCompletedCheckbox = () => {
-    this.props.updateSortedTasks(this.state.index);
+    const taskCompleted = this.sortedTasks[this.state.index];
+    let link;
+    if (taskCompleted.is_recurring) {
+      link = `/insertRoutes/insertRecurringTaskCompleted`;
+    }
+    else {
+      link = `/insertRoutes/insertTaskCompleted`
+    }
+
+    axios
+      .post(link, {
+        task_id: taskCompleted.id,
+        apt_id: taskCompleted.apt_id,
+        to_user_id: taskCompleted.to_user_id,
+        karma: taskCompleted.karma
+      })
+      .then(res => {
+        // console.log(this.sortedTasks)
+        this.sortedTasks.splice(this.state.index, 1);
+        // console.log(this.sortedTasks)
+        this.setState({
+          isSorted: false,
+        })
+      })
+      .catch(err => {
+        //some err message
+      })
   }
 
-  // GOOD
+  getRecurringDate = (type, day) => {
+    const date = new Date();
+    
+    switch (type) {
+      case 'day':
+        date.setHours(0, 0, 0, 0);
+        return date;
+      case 'week':
+        date.setDate(date.getDate() + (day + (7 - date.getDay())) % 7);
+        return date;
+      case 'month':
+        if (date.getDate() > day) {
+          return new Date(date.getFullYear(), date.getMonth() + 1, day);
+        }
+
+        const lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+
+        if (lastDay.getDate() < day) {
+          return lastDay;
+        }
+        else {
+          date.setDate(day);
+          return date;
+        }
+    }
+  }
+
+  addDueDateToRecurring = arr => {
+    let array = [];
+    arr.forEach(el => {
+      array.push({...el, due_date: this.getRecurringDate(el.due_date_type, el.due_date)});
+    })
+    return array;
+  }
+
   sortTasks = () => {
+    let tasks, recurringTasks, goals;
     let tasksArray = [];
 
-    const { tasks, recurringTasks, setSortedTasks } = this.props;
+    if (this.state.completed) {
+      tasksArray = this.sortedTasks;
+    }
+    else {
+      const { tasks, recurringTasks, goals } = this.props;
 
-    tasksArray = [...tasks, ...recurringTasks];
-  
-    tasksArray.sort((a, b) => {
-      return new Date(a.due_date) - new Date(b.due_date);
+      if (tasks.length) {
+        tasksArray = [...tasksArray, ...tasks];
+      }
+      if (recurringTasks.length) {
+        tasksArray = [...tasksArray, ...this.addDueDateToRecurring(recurringTasks)];
+      }
+    
+
+      tasksArray.sort((a, b) => {
+        return new Date(a.due_date) - new Date(b.due_date);
+      })
+
+      this.sortedTasks = tasksArray
+    }
+
+    this.setState({
+      isSorted: true,
+      completed: true
     })
-    return tasksArray;
-
   }
 
-  // GOOD
   handleIndexButton = e => {
     let newIndex;
-    const len = this.props.sortedTasks.length;
+    const len = this.sortedTasks.length;
     const { index } = this.state;
     if (len > 5) {
       if (e.target.value === 'next') {
@@ -85,50 +149,34 @@ class UpNextContainer extends Component {
     })
   }
 
-
-
   render() {
-    const { successQueries, sortedTasks } = this.props;
+    const { tasks, recurringTasks, expenses, recurringExpenses, goals, successQueries } = this.props;
+    // console.log('rerender', this.state);
+
     if ( !successQueries.fetchAllActiveTasks ||
       !successQueries.fetchAllActiveRecurringTasks ||
       !successQueries.fetchAllApartmentGoals 
       ) {
       return (<div className="up_next"><p>loading</p></div>)
     } 
-    else if (!successQueries.pushSuccessQueryArray) {
-      this.props.pushSuccessQueryArray('pushSuccessQueryArray');
-      this.props.setSortedTasks(this.sortTasks());
-      return (<div>loading</div>)
+    else if (this.state.isSorted === false) {
+      this.sortTasks();
+      return (
+        <div>loading</div>
+      )
     }
-    const { index } = this.state;
-    return (
-      <div className="up_next">
-        <Progressbar karma={sortedTasks[index].karma} />
-        <div className="next_task" id="next-task">
-          <NextTask task={sortedTasks[index].title} handleIndexButton={this.handleIndexButton} />
+    else {
+      const { index } = this.state;
+      // console.log(this.state, this.sortedTasks)
+      return (
+        <div className="up_next">
+          <Progressbar karma={this.sortedTasks[index].karma} />
+          <NextTask task={this.sortedTasks[index].title} handleIndexButton={this.handleIndexButton} />
+          <Checkbox handleCompletedCheckbox={this.handleCompletedCheckbox} />
         </div>
-        <Checkbox handleCompletedCheckbox={this.handleCompletedCheckbox} />
-      </div>
-    ); 
+      ); 
+    }
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UpNextContainer);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export default connect(mapStateToProps)(UpNextContainer);
