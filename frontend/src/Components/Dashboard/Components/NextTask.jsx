@@ -4,29 +4,6 @@ import { Card, Button } from "semantic-ui-react";
 import FlatButton from 'material-ui/FlatButton';
 
 class NextTask extends Component {
-    constructor(props) {
-        super(props)
-
-        this.state = {
-            sortedTasks: props.sortedTasks,
-            currentIndex: 0
-        }
-    }
-
-    handlePrevButton = e => {
-        let index = (this.state.currentIndex - 1) % 5
-        this.setState({
-            currentIndex: index
-        })
-    }
-
-	handleNextButton = e => {
-		let index = (this.state.currentIndex + 1) % 5;
-		this.setState({
-			currentIndex: index
-		})
-	}
-
 	render() {
 		const { handleIndexButton, handleCompletedCheckbox, task } = this.props;
 		console.log(task);
@@ -44,15 +21,16 @@ class NextTask extends Component {
 					<Card.Header>
 						Upcoming Task:
 					</Card.Header>
-					<Card.Meta> Type of task </Card.Meta>
+					<Card.Meta> {task.is_recurring ? "Recurring Expense" : task.cost > 0 ? "Expense" : "Chore"}Type of task </Card.Meta>
 				</Card.Content>
 				<Card.Content textAlign="center">
 					<Card.Description>
 						<h2 style={{display: "inline", marginRight: "1em"}}>{`${task.title}: ${task.karma} Karma Points`}</h2>
 						<Checkbox handleCompletedCheckbox={handleCompletedCheckbox} />
+						<h3>Due {task.due_date}</h3>
 					</Card.Description>
 					<Card.Description>
-						{`Message: ${task.message}`}
+						{task.message ? `Message: ${task.message}` : ""}
 					</Card.Description>
 				</Card.Content>
 				<Card.Content extra textAlign="right">
@@ -66,6 +44,7 @@ class NextTask extends Component {
 			</Card>
 		)
 	}
+
 }
 
-export default NextTask
+export default NextTask;
