@@ -1,14 +1,11 @@
 import React from "react";
-import { Modal, Dropdown, Icon } from "semantic-ui-react";
+import { Dropdown } from "semantic-ui-react";
 import Paper from 'material-ui/Paper';
 import MenuItem from 'material-ui/MenuItem';
 import TextField from 'material-ui/TextField';
 import DatePicker from 'material-ui/DatePicker';
-import SelectField from 'material-ui/SelectField';
 import RaisedButton from 'material-ui/RaisedButton';
-import DropDownMenu from 'material-ui/DropDownMenu';
 import ActionDone from 'material-ui/svg-icons/action/done';
-import { orange500, blue500 } from 'material-ui/styles/colors';
 import "../Styles/ModalStyles.css";
 
 const styles = {
@@ -31,7 +28,7 @@ const tasks = [
 
 class AddTaskModal extends React.Component {
     render() {
-        const { active, task, roommates, assignedRoommates, handleClose, handleChange, selectedDate, handleDate } = this.props;
+        const { task, roommates, handleClose, handleChange, selectedDate, handleDate } = this.props;
         return (
             <div className="modal" onClick={handleClose}>
                 <Paper className="form" zDepth={2}>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal, Dropdown, Icon } from "semantic-ui-react";
+import { Dropdown } from "semantic-ui-react";
 import Paper from 'material-ui/Paper';
 import Toggle from 'material-ui/Toggle';
 import TextField from 'material-ui/TextField';
@@ -21,7 +21,7 @@ const styles = {
 
 class AddExpenseModal extends React.Component {
     render() {
-        const { active, roommates, assignedRoommates, handleClose, selectedDate, handleDate, checked, toggleCheckbox } = this.props;
+        const { roommates, handleClose, selectedDate, handleDate, handleSubmit, isChecked, toggleCheckbox } = this.props;
         return (
             <div className="modal" onClick={handleClose}>
                 <Paper className="form" zDepth={2}>
@@ -55,14 +55,14 @@ class AddExpenseModal extends React.Component {
                     <div style={{ display: "flex", alignItems: "center", width:"10em", marginBottom: "1em"}}>
                         Recurring?
                         <Toggle
-                          label={checked ? "Yes" : "No"}
+                          label={isChecked ? "Yes" : "No"}
                           labelPosition="right"
                           onClick={toggleCheckbox}
                         />
                     </div>
                     <RaisedButton
                         name="addExpense"
-                    //   onClick={handleSubmit}
+                        onClick={handleSubmit}
                         label="Submit"
                         labelColor="#FFF"
                         icon={<ActionDone />}

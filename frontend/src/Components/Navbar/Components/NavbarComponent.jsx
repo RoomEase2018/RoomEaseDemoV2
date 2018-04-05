@@ -1,18 +1,8 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import { Menu, Icon, Dropdown, Modal } from "semantic-ui-react";
+import { Menu, Icon, Dropdown } from "semantic-ui-react";
 import "../Styles/Navbar.css";
-
-const styles = {
-  display: "flex",
-  // background: "linear-gradient(to bottom right, #76FF03, #00B0FF)",
-  justifyContent: "space-between",
-  marginBottom: "2em",
-  alignItems: "center",
-  backgroundColor: "#051923", // 283F3B // 310A31 // 0B5D1E // 053B06
-  width: "100%"
-};
 
 const NavbarComponent = ({ logout, active, handleClick }) => {
   const linkButtons = [
@@ -27,6 +17,7 @@ const NavbarComponent = ({ logout, active, handleClick }) => {
          <Menu.Item style={{paddingTop: "0", paddingBottom: "0"}}>
            <Link to="/">
              <img
+              alt="roomease-logo"
               className="navbar_logo_icon"
               src="https://i.imgur.com/m6bz64S.png"
               height="75px"

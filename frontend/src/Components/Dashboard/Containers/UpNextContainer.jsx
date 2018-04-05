@@ -183,7 +183,7 @@ class UpNextContainer extends Component {
         //   </div>
         //   <Checkbox handleCompletedCheckbox={this.handleCompletedCheckbox} />
         // </div>
-        <Grid.Row>
+        <Grid.Row className="up_next">
           <Grid.Column width={2}>
             <Progressbar karma={this.sortedTasks[index].karma} />
           </Grid.Column>

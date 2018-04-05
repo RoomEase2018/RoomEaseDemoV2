@@ -7,7 +7,7 @@ import {
 		fetchAllApartmentGoals,
     fetchAllCompletedTasks
 	} from "./Actions/DashboardActions";
-import { Grid, Image } from "semantic-ui-react";
+import { Grid } from "semantic-ui-react";
 import UpNextContainer from "./Containers/UpNextContainer";
 import CalendarContainer from "./Containers/CalendarContainer";
 import BulletinContainer from "./Containers/BulletinContainer";
@@ -61,7 +61,7 @@ class Dashboard extends Component {
       //   <CalendarContainer />
       //   <BulletinContainer />
       // </div>
-      <Grid container centered stackable columns="equal" verticalAlign="middle">
+      <Grid className="dashboard" container centered stackable columns="equal" verticalAlign="middle">
           <UpNextContainer />
         <Grid.Row>
           <CalendarContainer />
