@@ -37,7 +37,6 @@ class Calendar extends Component {
       )
     } 
     else {
-      console.log(this.props.tasks);
       if (events.length !== this.props.tasks.length) {
         let newEvents = [];
         this.props.tasks.forEach(task => {
