@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal, Dropdown, Icon } from "semantic-ui-react";
+import { Dropdown } from "semantic-ui-react";
 import Paper from 'material-ui/Paper';
 import Toggle from 'material-ui/Toggle';
 import TextField from 'material-ui/TextField';
@@ -12,22 +12,16 @@ import "../Styles/ModalStyles.css";
 
 const styles = {
     errorStyle: {
-        color: orange500,
-    },
-    underlineStyle: {
-        borderColor: orange500,
-    },
-    floatingLabelStyle: {
-        color: orange500,
+        color: "#C62828",
     },
     floatingLabelFocusStyle: {
-        color: blue500,
+        color: "#A2DEFD",
     },
 };
 
 class AddExpenseModal extends React.Component {
     render() {
-        const { active, roommates, assignedRoommates, handleClose, selectedDate, handleDate, checked, toggleCheckbox } = this.props;
+        const { roommates, handleClose, selectedDate, handleDate, handleSubmit, isChecked, toggleCheckbox } = this.props;
         return (
             <div className="modal" onClick={handleClose}>
                 <Paper className="form" zDepth={2}>
@@ -35,11 +29,15 @@ class AddExpenseModal extends React.Component {
                       name="title"
                       hintText="Add Expense"
                       floatingLabelText="Expense"
+                      errorStyle={styles.errorStyle}
+                      floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
                     />
                     <TextField
                       name="description"
                       hintText="Amount"
                       floatingLabelText="Amount"
+                      errorStyle={styles.errorStyle}
+                      floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
                     />
                     <br />
                     <DatePicker 
@@ -57,17 +55,18 @@ class AddExpenseModal extends React.Component {
                     <div style={{ display: "flex", alignItems: "center", width:"10em", marginBottom: "1em"}}>
                         Recurring?
                         <Toggle
-                          label={checked ? "Yes" : "No"}
+                          label={isChecked ? "Yes" : "No"}
                           labelPosition="right"
                           onClick={toggleCheckbox}
                         />
                     </div>
                     <RaisedButton
                         name="addExpense"
-                    //   onClick={handleSubmit}
-                      label="Submit"
-                      primary={true}
-                      icon={<ActionDone />}
+                        onClick={handleSubmit}
+                        label="Submit"
+                        labelColor="#FFF"
+                        icon={<ActionDone />}
+                        backgroundColor="#00E676"
                     />
                 </Paper>
             </div>

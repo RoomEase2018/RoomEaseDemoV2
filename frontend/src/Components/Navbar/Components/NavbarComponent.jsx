@@ -1,17 +1,8 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
-import { Menu, Icon, Dropdown, Modal } from "semantic-ui-react";
+import { Menu, Icon, Dropdown } from "semantic-ui-react";
 import "../Styles/Navbar.css";
-
-const styles = {
-  display: "flex",
-  // background: "linear-gradient(to bottom right, #76FF03, #00B0FF)",
-  justifyContent: "space-between",
-  marginBottom: "2em",
-  alignItems: "center",
-  backgroundColor: "#283F3B", // 310A31 // 0B5D1E // 053B06
-  width: "100%"
-};
 
 const NavbarComponent = ({ logout, active, handleClick }) => {
   const linkButtons = [
@@ -21,12 +12,12 @@ const NavbarComponent = ({ logout, active, handleClick }) => {
   ];
 
   return (
-    // className="navbar_container"
-    <div style={styles}>
+    <div className="navbar_container">
       <Menu secondary compact>
-         <Menu.Item>
+         <Menu.Item style={{paddingTop: "0", paddingBottom: "0"}}>
            <Link to="/">
              <img
+              alt="roomease-logo"
               className="navbar_logo_icon"
               src="https://i.imgur.com/m6bz64S.png"
               height="75px"
@@ -38,7 +29,7 @@ const NavbarComponent = ({ logout, active, handleClick }) => {
             key={idx}
             name={`${button.name}`}
           >
-            <Link to={`/${button.name}`} style={{color: "#F0EFF4"}}>
+            <Link to={`/${button.name}`} style={{color: "#A2DEFD"}}>
               <Icon link size="large" name={`${button.icon}`} />
               {button.name}
             </Link>
@@ -47,7 +38,7 @@ const NavbarComponent = ({ logout, active, handleClick }) => {
         </Menu>
 
         <div style={{marginRight: "2em"}}>
-          <Dropdown icon="plus" size="large" direction="left" style={{marginRight: "1em", color: "#F0EFF4"}} floating>
+          <Dropdown icon="plus" size="large" direction="left" style={{marginRight: "1em", color: "#A2DEFD"}} floating>
             <Dropdown.Menu>
               <Dropdown.Item
                 label={<Icon name="add to calendar" color="red" />}
@@ -79,7 +70,7 @@ const NavbarComponent = ({ logout, active, handleClick }) => {
           </Dropdown.Menu>
         </Dropdown>
 
-        <Dropdown icon="setting" size="large" style={{color: "#F0EFF4"}} floating direction="left">
+        <Dropdown icon="setting" size="large" style={{color: "#A2DEFD"}} floating direction="left">
           <Dropdown.Menu>
             <Dropdown.Item
               label={<Icon name="setting" color="blue" />}
@@ -106,191 +97,3 @@ const NavbarComponent = ({ logout, active, handleClick }) => {
 };
 
 export default NavbarComponent;
-
-// <Grid columns="equal" verticalAlign="middle" relaxed centered padded>
-//         <Grid.Column>
-//           <Item>
-//             <Item.Content>
-//             <Link to="/">
-//                 <img
-//                   className="navbar_logo_icon"
-//                   src="https://i.imgur.com/m6bz64S.png"
-//                   height="70px"
-//                 />
-//               </Link>
-//             </Item.Content>
-//           </Item>
-//           {linkButtons.map((button, idx) => (
-//               <Item
-//                 key={idx}
-//                 name={`${button.name}`}
-//                 link
-//               >
-//                 <Item.Content>
-//                   <Link to={`/${button.name}`}>
-//                     <Icon link size="large" name={`${button.icon}`} />
-//                     {button.name}
-//                   </Link>
-//                 </Item.Content>
-//               </Item>
-//             ))}
-//           </Grid.Column>
-//         <Grid.Column width={13}/>
-
-//         <Grid.Column>
-//           <Dropdown icon="plus" size="large" floating direction="left">
-//             <DropdownMenu>
-//               <Modal
-//               trigger={
-//                 <Dropdown.Item
-//                   label={<Icon name="add to calendar" color="red" />}
-//                   text="Add Task"
-//                 />
-//               }
-//             >
-//               <AddTaskModal />
-//               {/* <Modal.Header>Add a Task</Modal.Header> */}
-//             </Modal>
-//             <Modal
-//               trigger={
-//                 <Dropdown.Item
-//                   label={
-//                     <Icon>
-//                       <Icon.Group>
-//                         <Icon name="dollar" color="blue" />
-//                         <Icon corner name="plus" color="blue" />
-//                       </Icon.Group>
-//                     </Icon>
-//                   }
-//                   text="Add Expense"
-//                 />
-//               }
-//             >
-//               <Modal.Header>Add an Expense</Modal.Header>
-//             </Modal>
-//             <Modal
-//               trigger={
-//                 <Dropdown.Item
-//                   label={<Icon name="add user" color="green" />}
-//                   text="Add Roommate"
-//                 />
-//               }
-//             >
-//               <AddTaskModal />
-//               <Modal.Header>Add a Roommate</Modal.Header>
-//             </Modal>
-//           </DropdownMenu>
-//         </Dropdown>
-
-//         <Dropdown icon="setting" size="large" floating direction="left">
-//           <DropdownMenu>
-//             <Dropdown.Item
-//               label={<Icon name="setting" color="blue" />}
-//               text="Edit Apartment Profile"
-//             />
-//             <Dropdown.Item
-//               label={<Icon name="setting" color="red" />}
-//               text="Edit User Profile"
-//             />
-//             <Dropdown.Item
-//               onClick={logout}
-//               label={<Icon name="power" color="teal" />}
-//               text="Sign Out"
-//             />
-//           </DropdownMenu>
-//         </Dropdown>
-//         </Grid.Column>
-//       </Grid>
-
-{/* <Menu secondary>
-         <Menu.Item>
-           <Link to="/">
-             <img
-              className="navbar_logo_icon"
-              src="https://i.imgur.com/m6bz64S.png"
-              height="70px"
-            />
-          </Link>
-        </Menu.Item>
-        {linkButtons.map((button, idx) => (
-          <Menu.Item
-            key={idx}
-            link
-            name={`${button.name}`}
-            active={active === button.name}
-            onClick={this.handleClick}
-          >
-            <Link to={`/${button.name}`}>
-              <Icon link size="large" name={`${button.icon}`} />
-              {button.name}
-            </Link>
-          </Menu.Item>
-        ))}
-
-        <Menu.Menu position="right">
-          <Menu.Item>
-            <Dropdown item icon="plus" size="large" floating direction="left">
-              <Dropdown.Menu>
-                <Modal
-                  trigger={
-                    <Dropdown.Item
-                      label={<Icon name="add to calendar" color="red" />}
-                      text="Add Task"
-                    />
-                  }
-                >
-                  <Modal.Header>Add a Task</Modal.Header>
-                </Modal>
-                <Modal
-                  trigger={
-                    <Dropdown.Item
-                      label={
-                        <Icon>
-                          <Icon.Group>
-                            <Icon name="dollar" color="blue" />
-                            <Icon corner name="plus" color="blue" />
-                          </Icon.Group>
-                        </Icon>
-                      }
-                      text="Add Expense"
-                    />
-                  }
-                >
-                  <Modal.Header>Add an Expense</Modal.Header>
-                </Modal>
-                <Modal
-                  trigger={
-                    <Dropdown.Item
-                      label={<Icon name="add user" color="green" />}
-                      text="Add Roommate"
-                    />
-                  }
-                >
-                  <AddTaskModal />
-                  <Modal.Header>Add a Roommate</Modal.Header>
-                </Modal>
-              </Dropdown.Menu>
-            </Dropdown>
-          </Menu.Item>
-
-          <Menu.Item>
-            <Dropdown item icon="setting" size="large" floating direction="left">
-              <Dropdown.Menu>
-                <Dropdown.Item
-                  label={<Icon name="setting" color="blue" />}
-                  text="Edit Apartment Profile"
-                />
-                <Dropdown.Item
-                  label={<Icon name="setting" color="red" />}
-                  text="Edit User Profile"
-                />
-                <Dropdown.Item
-                  onClick={logout}
-                  label={<Icon name="power" color="teal" />}
-                  text="Sign Out"
-                />
-              </Dropdown.Menu>
-            </Dropdown>
-          </Menu.Item>
-        </Menu.Menu>
-      </Menu> */}

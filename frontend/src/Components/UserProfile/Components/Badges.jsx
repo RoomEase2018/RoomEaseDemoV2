@@ -3,7 +3,7 @@ import { Grid, Image, List } from "semantic-ui-react";
 
 const Badges = ({ badges }) => {
     return (
-        <Grid.Column className="badges" verticalAlign="middle" textAlign="left">
+        <Grid.Column className="badges" width={8} verticalAlign="middle" textAlign="left">
             <h3>Achievements</h3>
             <List horizontal relaxed>
                 <List.Item>

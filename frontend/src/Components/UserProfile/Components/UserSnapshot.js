@@ -1,24 +1,32 @@
 import React from "react";
-import { Grid, Item, Image, Segment } from "semantic-ui-react";
+import { Grid, Item, Card, Image, Segment } from "semantic-ui-react";
 
 const UserSnapshot = ({ username, userPic, userRoomKarma, userTask }) => (
-  <Grid.Column className="user-snapshot" width={8}>
+  <Grid.Column>
     <h2>Welcome back, {username}!</h2>
-    <Item.Group>
+
+    <Item.Group className="user-snapshot">
       <Item>
         <Item.Image size="small" circular src={userPic} />
 
         <Item.Content>
-          <Item.Header>Your Snapshot</Item.Header>
           <Item.Description>
-            <Segment compact color="pink">
-              <span>{username}</span> <br />
-              <span>{userRoomKarma} Karma Points</span> <br />
-              <span>Upcoming Task: {`${userTask[0].desc} ${userTask[0].date}`}</span>
-            </Segment>
+            <Card centered>
+              <Card.Content>
+                <Card.Header>{username}'s Snapshot</Card.Header>
+              </Card.Content>
+              <Card.Content>
+                <Card.Description>
+                  <span>{userRoomKarma} Karma Points</span> <br />
+                  <span>
+                    Upcoming Task: {`${userTask[0].desc} ${userTask[0].date}`}
+                  </span>
+                </Card.Description>
+
+              </Card.Content>
+            </Card>
           </Item.Description>
         </Item.Content>
-
       </Item>
     </Item.Group>
   </Grid.Column>

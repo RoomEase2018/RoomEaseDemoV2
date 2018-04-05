@@ -118,18 +118,15 @@ class Navbar extends React.Component {
         {active === "task" 
           ? <AddTaskModal 
               task={task}
-              active={active}  
               roommates={roommates} 
               selectedDate={selectedDate}
               handleDate={this.handleDate}
               handleChange={this.handleChange}
               handleSubmit={this.handleSubmit}
-              handleClose={this.handleClose}
-              assignedRoommates={assignedRoommates} /> 
+              handleClose={this.handleClose} /> 
           : ""}
         {active === "expense" 
           ? <AddExpenseModal 
-              active={active}
               isChecked={isChecked}
               roommates={roommates}
               selectedDate={selectedDate}
@@ -141,7 +138,6 @@ class Navbar extends React.Component {
           : ""}
           {active === "roommate" 
             ? <AddRoommateModal 
-                active={active} 
                 handleClose={this.handleClose} 
                 handleSubmit={this.handleSubmit}
               /> 
