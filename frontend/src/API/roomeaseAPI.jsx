@@ -29,7 +29,7 @@ export const fetchUserInfo = username => {
   return axios.get(`/getRoutes/getUserInfo/${username}`);
 };
 
-export const fetchAllApartmentTasks = apt_id => {
+export const fetchAllCompletedApartmentTasks = apt_id => {
   return axios.get(`/getRoutes/getAllCompletedTasksAndRecurring/${apt_id}`);
 }
 

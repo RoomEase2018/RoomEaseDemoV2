@@ -56,7 +56,7 @@ INSERT INTO tasks (apt_id, title, from_user_id, to_user_id, due_date, message, k
 
 INSERT INTO tasks (apt_id, title, from_user_id, to_user_id, due_date, message, karma) VALUES (1, 'clean bathroom', 1, 3, '2018/04/15', 'remember to clean the tub!', 50);
 
-INSERT INTO tasks (apt_id, title, from_user_id, to_user_id, due_date, message, karma) VALUES (1, 'buy milk', 1, 2, '2018/04/04', 'milk is spoiled', 10);
+INSERT INTO tasks (apt_id, title, from_user_id, to_user_id, due_date, message, karma) VALUES (1, 'buy ramen', 1, 2, '2018/04/04', '', 10);
 
 INSERT INTO tasks (apt_id, title, from_user_id, to_user_id, due_date, message, karma) VALUES (1, 'buy flowers for house', 3, 1, '2018/04/05', 'thanks :)', 10);
 
