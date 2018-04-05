@@ -8,6 +8,7 @@ export const PUSH_SUCCESS_QUERY_ARRAY = "PUSH_SUCCESS_QUERY_ARRAY"
 export const SET_ALL_COMPLETED_TASKS = "SET_ALL_COMPLETED_TASKS"
 export const UPDATE_SORTED_TASKS = "UPDATE_SORTED_TASKS"
 export const SET_SORTED_TASKS = "SET_SORTED_TASKS"
+export const INSERT_INTO_SORTED_TASK = "INSERT_INTO_SORTED_TASK"
 
 
 // helper functions
@@ -47,6 +48,13 @@ const addDueDateToRecurring = arr => {
 }
 
 // action creators
+export const insertIntoSortedTask = task => {
+  return {
+    type: INSERT_INTO_SORTED_TASK,
+    task
+  }
+}
+
 const setAllCompletedTasks = tasks => {
   return {
     type: SET_ALL_COMPLETED_TASKS,

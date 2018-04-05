@@ -1,38 +1,81 @@
 import React from "react";
-import { Dropdown } from "semantic-ui-react";
+import { Modal, Dropdown, Icon } from "semantic-ui-react";
+import { connect } from 'react-redux'
 import Paper from 'material-ui/Paper';
 import MenuItem from 'material-ui/MenuItem';
 import TextField from 'material-ui/TextField';
 import DatePicker from 'material-ui/DatePicker';
+import SelectField from 'material-ui/SelectField';
 import RaisedButton from 'material-ui/RaisedButton';
+import DropDownMenu from 'material-ui/DropDownMenu';
 import ActionDone from 'material-ui/svg-icons/action/done';
+import { orange500, blue500 } from 'material-ui/styles/colors';
 import "../Styles/ModalStyles.css";
+
+import { insertIntoSortedTask } from "../../Dashboard/Actions/DashboardActions";
+
+const mapDispatchToProps = dispatch => {
+    return {
+    insertIntoSortedTask: task => {
+      dispatch(insertIntoSortedTask(task));
+    }
+  }
+}
 
 const styles = {
     errorStyle: {
-        color: "#C62828",
+        color: orange500,
+    },
+    underlineStyle: {
+        borderColor: orange500,
+    },
+    floatingLabelStyle: {
+        color: orange500,
     },
     floatingLabelFocusStyle: {
-        color: "#A2DEFD",
+        color: blue500,
     },
 };
 
 const tasks = [
-    { key: 1, value: "Take out trash", text: "Take out trash", kp: 5 },
-    { key: 2, value: "Clean the dishes", text: "Clean the dishes", kp: 5 },
-    { key: 3, value: "Sweep the house", text: "Sweep the house", kp: 10 },
-    { key: 4, value: "Clean the kitchen", text: "Clean the kitchen", kp: 15 },
-    { key: 5, value: "Mop the floor", text: "Mop the floor", kp: 15 },
-    { key: 6, value: "Clean the bathroom", text: "Clean the bathroom", kp: 25 },
+    { key: 1, value: "Take out trash", text: "Take out trash", KP: 5 },
+    { key: 2, value: "Clean the dishes", text: "Clean the dishes", KP: 5 },
+    { key: 3, value: "Sweep the house", text: "Sweep the house", KP: 10 },
+    { key: 4, value: "Clean the kitchen", text: "Clean the kitchen", KP: 15 },
+    { key: 5, value: "Mop the floor", text: "Mop the floor", KP: 15 },
+    { key: 6, value: "Clean the bathroom", text: "Clean the bathroom", KP: 25 },
 ];
 
 class AddTaskModal extends React.Component {
+    constructor() {
+        super();
+
+
+    }
+
+    handleOnChange = e => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
+    handleDateChange = (e, d) => {
+        this.setState({
+            date: d
+        })
+    }
+
+    handleSubmit = e => {
+        console.log('submitted')
+    }
+
     render() {
-        const { task, roommates, handleClose, handleChange, selectedDate, handleDate } = this.props;
+        const { active, task, roommates, assignedRoommates, handleClose, handleChange, selectedDate, handleDate } = this.props;
+        console.log(this.state);
         return (
             <div className="modal" onClick={handleClose}>
                 <Paper className="form" zDepth={2}>
-                    <Dropdown 
+                    <Dropdown
                         onChange={handleChange}
                         placeholder='Select task' 
                         fluid selection options={tasks} 
@@ -41,8 +84,7 @@ class AddTaskModal extends React.Component {
                       name="title"
                       hintText="Enter task"
                       floatingLabelText="Task"
-                      errorStyle={styles.errorStyle}
-                      floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                      onChange={this.handleChange}
                     />
                     <TextField
                       name="description"
@@ -50,15 +92,14 @@ class AddTaskModal extends React.Component {
                       onChange={handleChange}
                       hintText="Enter task description"
                       floatingLabelText="Description"
-                      errorStyle={styles.errorStyle}
-                      floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                      onChange={this.handleChange}
                     />
                     <br />
                     <DatePicker 
                         hintText="Select a due date"
                         value={selectedDate}
-                        onChange={handleDate} 
-
+                        onChange={handleDate}
+                        handleDate={this.handleDateChange}
                     />
                     <br />
                     <Dropdown 
@@ -71,9 +112,9 @@ class AddTaskModal extends React.Component {
                     <RaisedButton
                         name="addTask"
                         label="Submit"
-                        labelColor="#FFF"
+                        primary={true}
                         icon={<ActionDone />}
-                        backgroundColor="#00E676"
+                        onClick={this.handleSubmit}
                     />
                 </Paper>
             </div>
@@ -81,4 +122,4 @@ class AddTaskModal extends React.Component {
     }
 }
 
-export default AddTaskModal;
+export default connect(mapDispatchToProps)(AddTaskModal);
