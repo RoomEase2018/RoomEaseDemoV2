@@ -43,6 +43,10 @@
   .dashboard .rbc-month-view {
     height: 500px; }
 
+.rbc-calendar .rbc-time-view .rbc-time-content {
+  display: none; 
+}
+
 .note {
   text-align: center;
   position: relative;

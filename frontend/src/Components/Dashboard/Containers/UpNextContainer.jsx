@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Progressbar from "../Components/Progressbar";
+import { Grid, Image } from "semantic-ui-react";
+import CircularProgress from 'material-ui/CircularProgress';
 import Checkbox from "../Components/Checkbox";
 import NextTask from "../Components/NextTask";
 import axios from "axios";
@@ -157,7 +159,12 @@ class UpNextContainer extends Component {
       !successQueries.fetchAllActiveRecurringTasks ||
       !successQueries.fetchAllApartmentGoals 
       ) {
-      return (<div className="up_next"><p>loading</p></div>)
+      return (
+        <div className="up_next">
+          <CircularProgress size={60} thickness={5} />
+          Loading task...
+        </div>
+      )
     } 
     else if (this.state.isSorted === false) {
       this.sortTasks();
@@ -169,13 +176,24 @@ class UpNextContainer extends Component {
       const { index } = this.state;
       // console.log(this.state, this.sortedTasks)
       return (
-        <div className="up_next">
+        // <div className="up_next">
+        //   <Progressbar karma={this.sortedTasks[index].karma} />
+        //   <div className="next_task" id="next-task">
+        //     <NextTask task={this.sortedTasks[index]} handleIndexButton={this.handleIndexButton} />
+        //   </div>
+        //   <Checkbox handleCompletedCheckbox={this.handleCompletedCheckbox} />
+        // </div>
+        <Grid.Row>
+          <Grid.Column width={2}>
           <Progressbar karma={this.sortedTasks[index].karma} />
-          <div className="next_task" id="next-task">
-            <NextTask task={this.sortedTasks[index].title} handleIndexButton={this.handleIndexButton} />
-          </div>
-          <Checkbox handleCompletedCheckbox={this.handleCompletedCheckbox} />
-        </div>
+          </Grid.Column>
+          <Grid.Column width={7}>
+          <NextTask task={this.sortedTasks[index]} handleIndexButton={this.handleIndexButton} />
+          </Grid.Column>
+          <Grid.Column width={4}>
+            <Checkbox handleCompletedCheckbox={this.handleCompletedCheckbox} />
+          </Grid.Column>
+        </Grid.Row>
       ); 
     }
   }

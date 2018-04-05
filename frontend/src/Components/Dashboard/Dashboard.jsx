@@ -6,7 +6,7 @@ import {
 		fetchAllVisibleNotes,
 		fetchAllApartmentGoals
 	} from "./Actions/DashboardActions";
-
+import { Grid, Image } from "semantic-ui-react";
 import UpNextContainer from "./Containers/UpNextContainer";
 import CalendarContainer from "./Containers/CalendarContainer";
 import BulletinContainer from "./Containers/BulletinContainer";
@@ -49,11 +49,20 @@ class Dashboard extends Component {
 
   render() {
     return (
-      <div className="dashboard">
-        <UpNextContainer />
-        <CalendarContainer />
-        <BulletinContainer />
-      </div>
+      // <div className="dashboard">
+      //   <UpNextContainer />
+      //   <CalendarContainer />
+      //   <BulletinContainer />
+      // </div>
+      <Grid container centered stackable columns="equal" verticalAlign="middle">
+          <UpNextContainer />
+        <Grid.Row>
+          <CalendarContainer />
+        </Grid.Row>
+        <Grid.Row>
+          <BulletinContainer />
+        </Grid.Row>
+      </Grid>
     );
   }
 }

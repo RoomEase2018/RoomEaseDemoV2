@@ -1,12 +1,12 @@
 import React from 'react';
-import { Container, Card, Feed } from 'semantic-ui-react';
+import { Grid, Card, Feed, Tab } from 'semantic-ui-react';
 
 class Activity extends React.Component {
 
     render() {
         return (
-            <Container fluid>
-                <Card fluid color="pink">
+            <Grid.Column width={8}>
+                <Card fluid>
                     <Card.Content>
                     <Card.Header>
                         Recent Activity
@@ -46,7 +46,7 @@ class Activity extends React.Component {
                     </Feed>
                     </Card.Content>
                 </Card>
-            </Container>
+            </Grid.Column>
         );
     }
 }

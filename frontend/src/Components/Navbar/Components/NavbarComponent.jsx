@@ -9,7 +9,7 @@ const styles = {
   justifyContent: "space-between",
   marginBottom: "2em",
   alignItems: "center",
-  backgroundColor: "#283F3B", // 310A31 // 0B5D1E // 053B06
+  backgroundColor: "#051923", // 283F3B // 310A31 // 0B5D1E // 053B06
   width: "100%"
 };
 
@@ -24,7 +24,7 @@ const NavbarComponent = ({ logout, active, handleClick }) => {
     // className="navbar_container"
     <div style={styles}>
       <Menu secondary compact>
-         <Menu.Item>
+         <Menu.Item style={{paddingTop: "0", paddingBottom: "0"}}>
            <Link to="/">
              <img
               className="navbar_logo_icon"
@@ -38,7 +38,7 @@ const NavbarComponent = ({ logout, active, handleClick }) => {
             key={idx}
             name={`${button.name}`}
           >
-            <Link to={`/${button.name}`} style={{color: "#F0EFF4"}}>
+            <Link to={`/${button.name}`} style={{color: "#A2DEFD"}}>
               <Icon link size="large" name={`${button.icon}`} />
               {button.name}
             </Link>
@@ -47,7 +47,7 @@ const NavbarComponent = ({ logout, active, handleClick }) => {
         </Menu>
 
         <div style={{marginRight: "2em"}}>
-          <Dropdown icon="plus" size="large" direction="left" style={{marginRight: "1em", color: "#F0EFF4"}} floating>
+          <Dropdown icon="plus" size="large" direction="left" style={{marginRight: "1em", color: "#A2DEFD"}} floating>
             <Dropdown.Menu>
               <Dropdown.Item
                 label={<Icon name="add to calendar" color="red" />}
@@ -79,7 +79,7 @@ const NavbarComponent = ({ logout, active, handleClick }) => {
           </Dropdown.Menu>
         </Dropdown>
 
-        <Dropdown icon="setting" size="large" style={{color: "#F0EFF4"}} floating direction="left">
+        <Dropdown icon="setting" size="large" style={{color: "#A2DEFD"}} floating direction="left">
           <Dropdown.Menu>
             <Dropdown.Item
               label={<Icon name="setting" color="blue" />}

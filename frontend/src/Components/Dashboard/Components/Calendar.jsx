@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import moment from "moment";
 import BigCalendar from "react-big-calendar";
+import CircularProgress from 'material-ui/CircularProgress';
 import styles from "react-big-calendar/lib/css/react-big-calendar.css";
 
 // BigCalendar.momentLocalizer(moment);
@@ -32,7 +33,7 @@ class Calendar extends Component {
     if (!this.props.tasks) {
       console.log('loading');
       return (
-        <div>loading</div>
+        <CircularProgress size={80} thickness={5} />
       )
     } 
     else {

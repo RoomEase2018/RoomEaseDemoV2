@@ -12,16 +12,10 @@ import "../Styles/ModalStyles.css";
 
 const styles = {
     errorStyle: {
-        color: orange500,
-    },
-    underlineStyle: {
-        borderColor: orange500,
-    },
-    floatingLabelStyle: {
-        color: orange500,
+        color: "#C62828",
     },
     floatingLabelFocusStyle: {
-        color: blue500,
+        color: "#A2DEFD",
     },
 };
 
@@ -35,11 +29,15 @@ class AddExpenseModal extends React.Component {
                       name="title"
                       hintText="Add Expense"
                       floatingLabelText="Expense"
+                      errorStyle={styles.errorStyle}
+                      floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
                     />
                     <TextField
                       name="description"
                       hintText="Amount"
                       floatingLabelText="Amount"
+                      errorStyle={styles.errorStyle}
+                      floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
                     />
                     <br />
                     <DatePicker 
@@ -65,9 +63,10 @@ class AddExpenseModal extends React.Component {
                     <RaisedButton
                         name="addExpense"
                     //   onClick={handleSubmit}
-                      label="Submit"
-                      primary={true}
-                      icon={<ActionDone />}
+                        label="Submit"
+                        labelColor="#FFF"
+                        icon={<ActionDone />}
+                        backgroundColor="#00E676"
                     />
                 </Paper>
             </div>

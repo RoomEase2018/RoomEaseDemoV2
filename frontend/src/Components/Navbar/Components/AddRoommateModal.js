@@ -10,16 +10,10 @@ import "../Styles/ModalStyles.css";
 
 const styles = {
     errorStyle: {
-        color: orange500,
-    },
-    underlineStyle: {
-        borderColor: orange500,
-    },
-    floatingLabelStyle: {
-        color: orange500,
+        color: "#C62828",
     },
     floatingLabelFocusStyle: {
-        color: blue500,
+        color: "#A2DEFD",
     },
 };
 
@@ -39,13 +33,16 @@ class AddRoommateModal extends React.Component {
                       name="description"
                       hintText="Send a message"
                       floatingLabelText="Message"
+                      errorStyle={styles.errorStyle}
+                      floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
                     />
                     <br />
                     <RaisedButton
                         name="addRoommate"
                         label="Submit"
-                        primary={true}
+                        labelColor="#FFF"
                         icon={<ActionDone />}
+                        backgroundColor="#00E676"
                         // onClick={handleSubmit}
                     />
                 </Paper>

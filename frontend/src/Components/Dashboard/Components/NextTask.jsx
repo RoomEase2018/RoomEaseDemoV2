@@ -28,8 +28,12 @@ class NextTask extends Component {
 		const { handleIndexButton, task } = this.props;
 		return (
 			<div>
-				<p>{task}</p>
-				<button value='previous' onClick={handleIndexButton}>prev</button><button value='next' onClick={handleIndexButton}>next</button>
+				<div>
+					<span>{task.title}</span>
+					<span>{task.karma}</span>
+				</div>
+				<button value='previous' onClick={handleIndexButton}>prev</button>
+				<button value='next' onClick={handleIndexButton}>next</button>
 			</div>
 		)
 	}
