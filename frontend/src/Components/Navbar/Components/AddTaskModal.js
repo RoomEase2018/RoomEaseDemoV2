@@ -39,8 +39,10 @@ class AddTaskModal extends React.Component {
                     />
                     <TextField
                       name="title"
+                      value={task.title}
                       hintText="Enter task"
                       floatingLabelText="Task"
+                      onChange={handleChange}
                       errorStyle={styles.errorStyle}
                       floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
                     />

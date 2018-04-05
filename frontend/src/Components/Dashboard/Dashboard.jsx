@@ -56,11 +56,6 @@ class Dashboard extends Component {
 
   render() {
     return (
-      // <div className="dashboard">
-      //   <UpNextContainer />
-      //   <CalendarContainer />
-      //   <BulletinContainer />
-      // </div>
       <Grid className="dashboard" container centered stackable columns="equal" verticalAlign="middle">
           <UpNextContainer />
         <Grid.Row>

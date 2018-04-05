@@ -1,12 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Progressbar from "../Components/Progressbar";
-import { Grid, Image } from "semantic-ui-react";
+import { Grid } from "semantic-ui-react";
 import CircularProgress from 'material-ui/CircularProgress';
-import Checkbox from "../Components/Checkbox";
 import NextTask from "../Components/NextTask";
 import axios from "axios";
-
 
 const mapStateToProps = state => {
   return {
@@ -183,15 +181,16 @@ class UpNextContainer extends Component {
         //   </div>
         //   <Checkbox handleCompletedCheckbox={this.handleCompletedCheckbox} />
         // </div>
-        <Grid.Row className="up_next">
+        <Grid.Row>
           <Grid.Column width={2}>
             <Progressbar karma={this.sortedTasks[index].karma} />
           </Grid.Column>
-          <Grid.Column width={7}>
-            <NextTask task={this.sortedTasks[index]} handleIndexButton={this.handleIndexButton} />
-          </Grid.Column>
-          <Grid.Column width={4}>
-            <Checkbox handleCompletedCheckbox={this.handleCompletedCheckbox} />
+          <Grid.Column width={11}>
+            <NextTask 
+              task={this.sortedTasks[index]} 
+              handleIndexButton={this.handleIndexButton}
+              handleCompletedCheckbox={this.handleCompletedCheckbox} 
+            />
           </Grid.Column>
         </Grid.Row>
       ); 
