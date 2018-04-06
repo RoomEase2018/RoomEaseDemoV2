@@ -38,7 +38,7 @@ const getRecurringDate = (type, day) => {
       }
   }
 }
-
+ 
 const addDueDateToRecurring = arr => {
   let array = [];
   arr.forEach(el => {

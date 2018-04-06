@@ -51,16 +51,14 @@
   zoom: 2;
   margin-right: 5px; }
 
-.dashboard .calendar .rbc-calendar {
-  width: 900px; }
+/* .dashboard .calendar .rbc-calendar {
+  width: 900px; } */
 
 .dashboard .calendar .rbc-calendar .rbc-toolbar .rbc-btn-group {
   background-color: white;
   background-clip: padding-box; }
 
 .dashboard .calendar .rbc-calendar .rbc-time-view .rbc-time-header {
-  border: 1px solid #283F3B;
-  box-shadow: 2px 2px 10px black;
   background-color: white; }
 
 .dashboard .calendar .rbc-calendar .rbc-time-view .rbc-time-header .rbc-label {
@@ -71,12 +69,10 @@
 
 .dashboard .calendar .rbc-calendar .rbc-month-view {
   height: 500px;
-  background-color: white;
-  box-shadow: 2px 2px 10px black; }
+  background-color: white; }
 
 .dashboard .calendar .rbc-calendar .rbc-agenda-view {
-  background-color: white;
-  box-shadow: 2px 2px 10px black; }
+  background-color: white; }
 
 .dashboard .bulletin {
   height: 650px;
@@ -89,7 +85,7 @@
   position: relative;
   width: 150px;
   height: 150px;
-  background-color: yellow;
+  background-color: #ffff8a;
   border: 1px black solid; }
 
 .invisible {

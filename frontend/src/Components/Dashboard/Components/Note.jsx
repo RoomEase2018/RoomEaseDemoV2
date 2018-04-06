@@ -16,10 +16,10 @@ class Note extends Component {
 
 		if (message === null) {
 			return (
-				<Draggable onStart={() => false}>
+				<Draggable onStart={() => true}>
 					<div className='note invisible'>
 						<p>{message}</p>
-						<button onClick={this.hideNote}>DELETE</button>
+						{/* <button onClick={this.hideNote}>delete</button> */}
 					</div>
 				</Draggable>
 			)
@@ -29,7 +29,7 @@ class Note extends Component {
 				<Draggable>
 					<div className='note' bounds='parent'>
 						<p>{message}</p>
-						<button onClick={this.hideNote}>DELETE</button>
+						{/* <button onClick={this.hideNote}>delete</button> */}
 					</div>
 				</Draggable>
 			)

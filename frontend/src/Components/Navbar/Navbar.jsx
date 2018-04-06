@@ -54,15 +54,14 @@ class Navbar extends React.Component {
     this.setState({ active: name })
   };
 
-  handleChange = (e, { name, key, value }) => {
+  handleChange = (e) => {
     const { task } = this.state;
-    console.log("name:", name, "key:", key, "value:", value);
-    name === "description"
+    e.target.name === "description"
       ? this.setState({
-          task: {...task, description: value}
+          task: {...task, description: e.target.value}
         })
       : this.setState({
-        task: {...task, title: value}
+        task: {...task, title: e.target.value}
       });
   };
 
@@ -82,7 +81,7 @@ class Navbar extends React.Component {
   };
 
   handleClose = (e) => {
-    e.target.className === "modal" 
+    e.target.className === "modal" || e.target.name === 'addTask' 
       ? this.setState({ 
           active: "", 
           selectedDate: null, 

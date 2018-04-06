@@ -5,35 +5,27 @@ import Paper from 'material-ui/Paper';
 import MenuItem from 'material-ui/MenuItem';
 import TextField from 'material-ui/TextField';
 import DatePicker from 'material-ui/DatePicker';
-import SelectField from 'material-ui/SelectField';
 import RaisedButton from 'material-ui/RaisedButton';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import ActionDone from 'material-ui/svg-icons/action/done';
-import { orange500, blue500 } from 'material-ui/styles/colors';
 import "../Styles/ModalStyles.css";
 
 import { insertIntoSortedTask } from "../../Dashboard/Actions/DashboardActions";
 
 const mapDispatchToProps = dispatch => {
     return {
-    insertIntoSortedTask: task => {
-      dispatch(insertIntoSortedTask(task));
+        insertIntoSortedTask: task => {
+          dispatch(insertIntoSortedTask(task));
+        }
     }
-  }
 }
 
 const styles = {
     errorStyle: {
-        color: orange500,
-    },
-    underlineStyle: {
-        borderColor: orange500,
-    },
-    floatingLabelStyle: {
-        color: orange500,
+        color: "#C62828",
     },
     floatingLabelFocusStyle: {
-        color: blue500,
+        color: "#A2DEFD",
     },
 };
 
@@ -51,11 +43,17 @@ class AddTaskModal extends React.Component {
         super();
 
         this.state = {
-
+            apt_id: 1,
+            title: '',
+            message: '',
+            from_user_id: 1,
+            to_user_id: 1,
+            due_date: new Date(),
+            karma: 0,
         }
     }
 
-    handleChange = e => {
+    handleInputChange = e => {
         this.setState({
             [e.target.name]: e.target.value
         })
@@ -69,17 +67,27 @@ class AddTaskModal extends React.Component {
 
     handleSubmit = e => {
         console.log('submitted ', this.state);
-        // this.props.insertIntoSortedTask({
-
-        // })
+        console.log('props: ', this.props.insertIntoSortedTask)
+        const { apt_id, title, to_user_id, from_user_id, due_date, karma, message } = this.state;
+        this.props.insertIntoSortedTask({
+            title: title,
+            apt_id: apt_id,
+            to_user_id: to_user_id,
+            from_user_id: from_user_id,
+            due_date: due_date,
+            karma: karma,
+            message: message
+        })
     }
 
     handleSelectRoommate = (e, a) => {
-        console.log('selectRoommate ', a.value)
+        this.setState({
+            to_user_id: 1
+        })
     }
 
     render() {
-        const { active, task, roommates, assignedRoommates, handleClose, handleChange, selectedDate, handleDate } = this.props;
+        const { task, roommates, assignedRoommates, handleClose, handleChange, selectedDate, handleDate } = this.props;
         console.log(this.state);
         return (
             <div className="modal" onClick={handleClose}>
@@ -91,21 +99,25 @@ class AddTaskModal extends React.Component {
                     />
                     <TextField
                       name="title"
+                      // value={task.title}
                       hintText="Enter task"
                       floatingLabelText="Task"
-                      onChange={this.handleChange}
+                      onChange={this.handleInputChange}
+                      errorStyle={styles.errorStyle}
+                      floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
                     />
                     <TextField
                       name="message"
+                      // value={task.description}
                       hintText="Enter task description"
                       floatingLabelText="Description"
-                      onChange={this.handleChange}
+                      onChange={this.handleInputChange}
                     />
                     <TextField
                       name="karma"
                       hintText="Enter karma value"
                       floatingLabelText="Karma Awarded"
-                      onChange={this.handleChange}
+                      onChange={this.handleInputChange}
                     />
                     <br />
                     <DatePicker 
@@ -135,4 +147,4 @@ class AddTaskModal extends React.Component {
     }
 }
 
-export default connect(mapDispatchToProps)(AddTaskModal);
+export default connect(null, mapDispatchToProps)(AddTaskModal);
