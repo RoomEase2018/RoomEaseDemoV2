@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import moment from "moment";
 import BigCalendar from "react-big-calendar";
+import { Grid } from "semantic-ui-react";
 import styles from "react-big-calendar/lib/css/react-big-calendar.css";
 
 BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment));
@@ -35,7 +36,7 @@ class Calendar extends Component {
         })
       })
       return (
-        <div className='calendar' >
+        <Grid.Column className='calendar'>
           <BigCalendar
             events={events}
             views={["week", "month", "agenda"]}
@@ -44,7 +45,7 @@ class Calendar extends Component {
             showMultiDayTimes
             defaultDate={new Date()}
           />
-        </div>  
+        </Grid.Column>  
       );
     }
   }

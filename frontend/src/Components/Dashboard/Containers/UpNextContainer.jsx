@@ -87,17 +87,17 @@ class UpNextContainer extends Component {
 
   render() {
     const { successQueries, sortedTasks } = this.props;
-    console.log(sortedTasks, this.state.index)
+    
     if ( !successQueries.fetchAllActiveTasks ||
       !successQueries.fetchAllActiveRecurringTasks ||
       !successQueries.fetchAllApartmentGoals 
       ) {
-      return (<div className="up_next"><p>loading</p></div>)
+      return (<CircularProgress size={70} thickness={5}>loading tasks...</CircularProgress>)
     } 
     else if (!successQueries.pushSuccessQueryArray) {
       this.props.pushSuccessQueryArray('pushSuccessQueryArray');
       this.props.setSortedTasks(this.sortTasks());
-      return (<div>loading</div>)
+      return (<CircularProgress size={70} thickness={5}>loading tasks...</CircularProgress>)
     }
     else {
       const { index } = this.state;
@@ -106,11 +106,11 @@ class UpNextContainer extends Component {
         // className="up_next"
         <Grid.Row>
           <Grid.Column width={2}>
-            <Progressbar karma={this.sortedTasks[index].karma} />
+            <Progressbar karma={sortedTasks[index].karma} />
           </Grid.Column>
           <Grid.Column width={11}>
             <NextTask 
-              task={this.sortedTasks[index]} 
+              task={sortedTasks[index]} 
               handleIndexButton={this.handleIndexButton}
               handleCompletedCheckbox={this.handleCompletedCheckbox} 
             />

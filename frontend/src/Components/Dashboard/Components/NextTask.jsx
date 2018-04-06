@@ -3,34 +3,29 @@ import Checkbox from "../Components/Checkbox";
 import { Card, Button } from "semantic-ui-react";
 import FlatButton from 'material-ui/FlatButton';
 
+const months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
+
 class NextTask extends Component {
 	render() {
 		const { handleIndexButton, handleCompletedCheckbox, task } = this.props;
-		console.log(task);
+		task.due_date = new Date(task.due_date);
 		return (
-			// <div className="next_task" id="next-task">
-			// 	<div>
-			// 		<span>{task.title}</span>
-			// 		<span>{task.karma}</span>
-			// 	</div>
-			// 	<button value='previous' onClick={handleIndexButton}>←</button>
-			// 	<button value='next' onClick={handleIndexButton}>→</button>
-			// </div>
+			// className="next_task" id="next-task"
 			<Card fluid centered>
 				<Card.Content>
 					<Card.Header>
 						Upcoming Task:
 					</Card.Header>
-					<Card.Meta> {task.is_recurring ? "Recurring Expense" : task.cost > 0 ? "Expense" : "Chore"}Type of task </Card.Meta>
+					<Card.Meta> {task.is_recurring ? "Recurring Expense" : task.cost > 0 ? "Expense" : "Chore"} </Card.Meta>
 				</Card.Content>
 				<Card.Content textAlign="center">
 					<Card.Description>
-						<h2 style={{display: "inline", marginRight: "1em"}}>{`${task.title}: ${task.karma} Karma Points`}</h2>
+						<h3 style={{display: "inline", marginRight: "1em"}}>{`${task.title}: ${task.karma} Karma Points`}</h3>
 						<Checkbox handleCompletedCheckbox={handleCompletedCheckbox} />
-						<h3>Due {task.due_date}</h3>
+						<h4>Due {`${months[task.due_date.getMonth()]} ${task.due_date.getDate()}, ${task.due_date.getFullYear()}`}</h4>
 					</Card.Description>
 					<Card.Description>
-						{task.message ? `Message: ${task.message}` : ""}
+						<h5>{task.message ? `Message: ${task.message}` : ""}</h5>
 					</Card.Description>
 				</Card.Content>
 				<Card.Content extra textAlign="right">

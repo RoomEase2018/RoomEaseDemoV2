@@ -3,8 +3,7 @@ import { Grid, Item, Card, Image, Segment } from "semantic-ui-react";
 
 const UserSnapshot = ({ username, userPic, userRoomKarma, userTask }) => (
   <Grid.Column>
-    <h2>Welcome back, {username}!</h2>
-
+    {/* <h2>Welcome back, {username}!</h2> */}
     <Item.Group className="user-snapshot">
       <Item>
         <Item.Image size="small" circular src={userPic} />
