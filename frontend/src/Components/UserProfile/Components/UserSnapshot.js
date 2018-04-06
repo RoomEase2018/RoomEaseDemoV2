@@ -7,7 +7,7 @@ const UserSnapshot = ({ username, userPic, userRoomKarma, userTask }) => (
 
     <Item.Group className="user-snapshot">
       <Item>
-        <Item.Image size="small" circular src={userPic} />
+        <Item.Image size="small" circular src="https://react.semantic-ui.com/assets/images/avatar/small/elliot.jpg" />
 
         <Item.Content>
           <Item.Description>

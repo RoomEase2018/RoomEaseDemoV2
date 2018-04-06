@@ -1,5 +1,16 @@
 .userProfile {
+    height: 100%;
     .profile { //ui centereed container
+        div { // centered stretched
+            div:nth-child(2) {
+                .list {
+                    .item:not(:first-child) {
+                        padding: 0 0 2px 0;
+                        margin: 0;
+                    }
+                }
+            }
+        }
         div:nth-child(2) { // stretched row
             div { // stretch column
                 div { //UI Fluid

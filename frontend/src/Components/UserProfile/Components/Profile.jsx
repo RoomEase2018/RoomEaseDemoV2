@@ -26,6 +26,9 @@ const Profile = ({ user }) => {
                 <ApartmentList username={username} />
                 { !apt_id ? <Setup /> : <Activity />}
             </Grid.Row>
+            <Grid.Row stretched centered>
+                Apartment Goals and Rewards
+            </Grid.Row>
         </Grid>
     );
 };
