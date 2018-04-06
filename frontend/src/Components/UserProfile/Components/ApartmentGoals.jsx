@@ -28,7 +28,7 @@ class ApartmentGoals extends Component {
   	}
     return (
       <div>
-      	<h1 style={{textDecoration: 'underline'}}>total karma: {this.apartmentKarma}</h1>
+      	<h3>Total karma: {this.apartmentKarma}</h3>
 				{this.props.goals.map(goal => (
 					<div>
 						<div><h1>{goal.title}</h1></div>

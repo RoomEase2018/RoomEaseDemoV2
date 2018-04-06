@@ -5,7 +5,7 @@ class Activity extends React.Component {
 
     render() {
         return (
-            <Grid.Column width={8}>
+            <Grid.Column>
                 <Card fluid>
                     <Card.Content>
                     <Card.Header>

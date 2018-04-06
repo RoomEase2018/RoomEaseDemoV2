@@ -6,11 +6,11 @@ const UserSnapshot = ({ username, userPic, userRoomKarma, userTask }) => (
     {/* <h2>Welcome back, {username}!</h2> */}
     <Item.Group className="user-snapshot">
       <Item>
-        <Item.Image size="small" circular src="https://react.semantic-ui.com/assets/images/avatar/small/elliot.jpg" />
+        <Item.Image size="small" circular src={userPic} />
 
         <Item.Content>
           <Item.Description>
-            <Card centered>
+            <Card centered fluid>
               <Card.Content>
                 <Card.Header>{username}'s Snapshot</Card.Header>
               </Card.Content>
