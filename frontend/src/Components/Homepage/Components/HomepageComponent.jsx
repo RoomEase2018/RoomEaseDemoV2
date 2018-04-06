@@ -37,9 +37,8 @@ class HomepageComponent extends Component {
               alt="roomease-logo"
               className="navbar_logo_icon"
               src="https://i.imgur.com/m6bz64S.png"
-              height="750px"
+              height="250px"
             />
-            <p />
           </div>
           <div className="signup_form">
             <h2>Sign Up</h2>

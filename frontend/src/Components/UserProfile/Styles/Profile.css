@@ -11,7 +11,7 @@
 .userProfile .profile div:nth-child(2) div div div:nth-child(2) .description {
   line-height: 2em; }
 
-.userProfile .profile div:nth-child(2) div div div:nth-child(2) .description .pics {
+/* .userProfile .profile div:nth-child(2) div div div:nth-child(2) .description .pics {
   display: flex;
   float: right; }
 
@@ -19,4 +19,4 @@
   border-radius: 50%;
   height: 35px;
   border-radius: 50%;
-  height: 35px; }
+  height: 35px; } */
