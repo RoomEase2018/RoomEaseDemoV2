@@ -80,16 +80,14 @@ class Navbar extends React.Component {
     });
   };
 
-  handleClose = (e) => {
-    e.target.className === "modal" || e.target.className === "addTask" 
-      ? this.setState({ 
-          active: "", 
-          selectedDate: null, 
-          isChecked: false, 
-          assignedRoommates: [], 
-          task: { title: "", description: ""} 
-        })
-      : "";
+  handleClose = (e) => { 
+    this.setState({ 
+      active: "", 
+      selectedDate: null, 
+      isChecked: false, 
+      assignedRoommates: [], 
+      task: { title: "", description: ""} 
+    })
   };
 
   handleSubmit = e => {
