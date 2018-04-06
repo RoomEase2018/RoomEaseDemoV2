@@ -8,7 +8,7 @@ import {
   SET_SORTED_TASKS,
   UPDATE_SORTED_TASKS,
   INSERT_INTO_SORTED_TASK
-} from "../Actions/DashboardActions";
+} from "./Actions/actions";
 
 const defaultState = {
   tasks: [],

@@ -5,7 +5,6 @@ import { Grid, Image } from "semantic-ui-react";
 import CircularProgress from 'material-ui/CircularProgress';
 import Checkbox from "../Components/Checkbox";
 import NextTask from "../Components/NextTask";
-import axios from "axios";
 
 import { updateSortedTasks, setSortedTasks, pushSuccessQueryArray } from "../Actions/DashboardActions";
 
@@ -88,7 +87,7 @@ class UpNextContainer extends Component {
 
   render() {
     const { successQueries, sortedTasks } = this.props;
-    console.log(sortedTasks, this.state.index)
+
     if ( !successQueries.fetchAllActiveTasks ||
       !successQueries.fetchAllActiveRecurringTasks ||
       !successQueries.fetchAllApartmentGoals 

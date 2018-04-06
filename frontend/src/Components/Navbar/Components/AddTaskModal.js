@@ -50,10 +50,12 @@ class AddTaskModal extends React.Component {
     constructor() {
         super();
 
+        this.state = {
 
+        }
     }
 
-    handleOnChange = e => {
+    handleChange = e => {
         this.setState({
             [e.target.name]: e.target.value
         })
@@ -61,12 +63,19 @@ class AddTaskModal extends React.Component {
 
     handleDateChange = (e, d) => {
         this.setState({
-            date: d
+            due_date: d
         })
     }
 
     handleSubmit = e => {
-        console.log('submitted')
+        console.log('submitted ', this.state);
+        // this.props.insertIntoSortedTask({
+
+        // })
+    }
+
+    handleSelectRoommate = (e, a) => {
+        console.log('selectRoommate ', a.value)
     }
 
     render() {
@@ -87,19 +96,22 @@ class AddTaskModal extends React.Component {
                       onChange={this.handleChange}
                     />
                     <TextField
-                      name="description"
-                      value={task.description}
-                      onChange={handleChange}
+                      name="message"
                       hintText="Enter task description"
                       floatingLabelText="Description"
+                      onChange={this.handleChange}
+                    />
+                    <TextField
+                      name="karma"
+                      hintText="Enter karma value"
+                      floatingLabelText="Karma Awarded"
                       onChange={this.handleChange}
                     />
                     <br />
                     <DatePicker 
                         hintText="Select a due date"
-                        value={selectedDate}
-                        onChange={handleDate}
-                        handleDate={this.handleDateChange}
+                        // value={selectedDate}
+                        onChange={this.handleDateChange}
                     />
                     <br />
                     <Dropdown 
@@ -107,6 +119,7 @@ class AddTaskModal extends React.Component {
                         options={roommates}
                         selection
                         multiple  
+                        onChange={this.handleSelectRoommate}
                     />
                     <br />
                     <RaisedButton
