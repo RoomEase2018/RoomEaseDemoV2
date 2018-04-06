@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
+import RaisedButton from 'material-ui/RaisedButton';
+import ActionDone from 'material-ui/svg-icons/action/done';
 
 class Checkbox extends Component {
 
 	render() {
 		return (
-			<div className="checkbox" id="checkbox" >
-          <input type="checkbox" name="completed" value="false" onClick={this.props.handleCompletedCheckbox} />
-          Completed
-      </div>
+			<RaisedButton
+				label="Complete"
+				labelColor="#FFF"
+				icon={<ActionDone />}
+				backgroundColor="#00E676"
+				onClick={this.props.handleCompletedCheckbox}
+			/>
 		)
 	}
 }

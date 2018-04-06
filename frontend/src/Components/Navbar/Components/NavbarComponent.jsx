@@ -1,14 +1,14 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import { Menu, Icon, Dropdown } from "semantic-ui-react";
+import { Container, Menu, Icon, Dropdown } from "semantic-ui-react";
 import "../Styles/Navbar.css";
 
 const NavbarComponent = ({ logout, active, handleClick }) => {
   const linkButtons = [
     { name: "profile", icon: "user circle outline" },
     { name: "dashboard", icon: "dashboard" },
-    { name: "apartment", icon: "users" }
+    // { name: "apartment", icon: "users" }
   ];
 
   return (

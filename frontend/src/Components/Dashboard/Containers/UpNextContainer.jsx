@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Progressbar from "../Components/Progressbar";
-import { Grid, Image } from "semantic-ui-react";
+import { Grid } from "semantic-ui-react";
 import CircularProgress from 'material-ui/CircularProgress';
-import Checkbox from "../Components/Checkbox";
 import NextTask from "../Components/NextTask";
 
 import { updateSortedTasks, setSortedTasks, pushSuccessQueryArray } from "../Actions/DashboardActions";
@@ -87,33 +86,37 @@ class UpNextContainer extends Component {
 
   render() {
     const { successQueries, sortedTasks } = this.props;
-
+    
     if ( !successQueries.fetchAllActiveTasks ||
       !successQueries.fetchAllActiveRecurringTasks ||
       !successQueries.fetchAllApartmentGoals 
       ) {
-      return (<div className="up_next"><p>loading</p></div>)
+      return (<CircularProgress size={70} thickness={5}>loading tasks...</CircularProgress>)
     } 
     else if (!successQueries.pushSuccessQueryArray) {
       this.props.pushSuccessQueryArray('pushSuccessQueryArray');
       this.props.setSortedTasks(this.sortTasks());
-      return (<div>loading</div>)
+      return (<CircularProgress size={70} thickness={5}>loading tasks...</CircularProgress>)
     }
-    const { index } = this.state;
-
-    return (
-      <Grid.Row className="up_next">
-        <Grid.Column width={2}>
-          <Progressbar karma={sortedTasks[index].karma} />
-        </Grid.Column>
-        <Grid.Column width={7}>
-          <NextTask task={sortedTasks[index].title} handleIndexButton={this.handleIndexButton} />
-        </Grid.Column>
-        <Grid.Column width={4}>
-          <Checkbox handleCompletedCheckbox={this.handleCompletedCheckbox} />
-        </Grid.Column>
-      </Grid.Row>
-    )
+    else {
+      const { index } = this.state;
+      // console.log(this.state, this.sortedTasks)
+      return (
+        // className="up_next"
+        <Grid.Row>
+          <Grid.Column width={2}>
+            <Progressbar karma={sortedTasks[index].karma} />
+          </Grid.Column>
+          <Grid.Column width={11}>
+            <NextTask 
+              task={sortedTasks[index]} 
+              handleIndexButton={this.handleIndexButton}
+              handleCompletedCheckbox={this.handleCompletedCheckbox} 
+            />
+          </Grid.Column>
+        </Grid.Row>
+      ); 
+    }
   }
 }
 
