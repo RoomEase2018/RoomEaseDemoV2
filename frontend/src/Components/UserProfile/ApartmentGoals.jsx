@@ -33,6 +33,7 @@ class ApartmentGoals extends Component {
 					<div>
 						<div>{goal.title}</div>
 						<div>Karma Needed: {goal.karma}</div>
+            <button>Redeem</button>
 					</div>
 				))}      	
       </div>
