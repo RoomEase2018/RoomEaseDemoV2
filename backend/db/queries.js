@@ -52,7 +52,7 @@ function getActiveRecurringTasks(req, res, next) {
 function getAllCompletedTasksAndRecurring(req, res, next) {
   db
     .any(
-      "SELECT * FROM tasks_completed WHERE apt_id=${apt_id} UNION SELECT * FROM tasks_recurring_completed WHERE apt_id=${apt_id}",
+      "SELECT * FROM tasks_completed WHERE apt_id=${apt_id} UNION SELECT * FROM tasks_recurring_completed WHERE apt_id=${apt_id} ORDER BY DUE_DATE ASC",
       {
         apt_id: req.params.apt_id
       }

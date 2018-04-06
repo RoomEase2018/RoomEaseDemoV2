@@ -64,12 +64,11 @@ export default (state = defaultState, action) => {
 
     case UPDATE_SORTED_TASKS:
      const newArr = [...state.sortedTasks];
-     newArr.splice(action.index, 1);
-      // const newArr = state.sortedTasks.filter((task, index) => index !== action.index)
-      console.log('after ', newArr)
+     let completed = newArr.splice(action.index, 1);
       return {
         ...state,
-        sortedTasks: newArr
+        sortedTasks: newArr,
+        completedTasks: [completed, ...state.completedTasks]
       }
 
     case PUSH_SUCCESS_QUERY_ARRAY:
