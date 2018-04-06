@@ -81,7 +81,7 @@ class Navbar extends React.Component {
   };
 
   handleClose = (e) => {
-    e.target.className === "modal" || e.target.name === 'addTask' 
+    e.target.className === "modal" || e.target.className === "addTask" 
       ? this.setState({ 
           active: "", 
           selectedDate: null, 
