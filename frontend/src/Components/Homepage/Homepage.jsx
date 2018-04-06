@@ -3,7 +3,7 @@ import HomepageComponent from "./Components/HomepageComponent";
 import { connect } from "react-redux";
 import { Redirect } from "react-router";
 import axios from "axios";
-import "./Styles/Homepage.scss";
+import "./Styles/Homepage.css";
 
 class Homepage extends Component {
     constructor() {
@@ -68,7 +68,7 @@ class Homepage extends Component {
         console.log(this.props);
         console.log(this.state)
         if (this.props.Profile.loggedIn) {
-            return <Redirect to="/" />
+            return <Redirect to="/dashboard" />
         };
 
         return (
