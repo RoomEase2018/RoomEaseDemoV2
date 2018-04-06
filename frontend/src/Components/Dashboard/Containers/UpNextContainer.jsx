@@ -4,7 +4,6 @@ import Progressbar from "../Components/Progressbar";
 import { Grid } from "semantic-ui-react";
 import CircularProgress from 'material-ui/CircularProgress';
 import NextTask from "../Components/NextTask";
-import axios from "axios";
 
 import { updateSortedTasks, setSortedTasks, pushSuccessQueryArray } from "../Actions/DashboardActions";
 

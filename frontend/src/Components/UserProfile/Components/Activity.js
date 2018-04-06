@@ -25,7 +25,7 @@ class Activity extends React.Component {
                         </Feed.Event>
 
                         <Feed.Event>
-                        <Feed.Label image='https://react.semantic-ui.com/assets/images/avatar/small/matthew.png' />
+                        <Feed.Label image='https://react.semantic-ui.com/assets/images/avatar/small/elliot.jpg' />
                         <Feed.Content>
                             <Feed.Summary>
                                 You completed your 'Take out the trash' task.
