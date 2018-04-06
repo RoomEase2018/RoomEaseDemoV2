@@ -36,7 +36,7 @@ class NextTask extends Component {
 						<Button basic fluid={false} color='grey' value='previous' onClick={handleIndexButton}>Back</Button>
 						<Button basic fluid={false} color='green'value='next' onClick={handleIndexButton}>Next</Button>
 					</div> */}
-					<FlatButton value='previous' onClick={handleIndexButton}>Back</FlatButton>
+					<FlatButton value='previous' onClick={handleIndexButton} backgroundColor="#00E676">Back</FlatButton> {' '}
 					<FlatButton value='previous' onClick={handleIndexButton} backgroundColor="#00E676">Next</FlatButton>
 				</Card.Content>
 			</Card>

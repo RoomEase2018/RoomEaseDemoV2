@@ -6,15 +6,15 @@ const UserSnapshot = ({ username, userPic, userRoomKarma, userTask }) => (
     {/* <h2>Welcome back, {username}!</h2> */}
     <Item.Group className="user-snapshot">
       <Item>
-        <Item.Image size="small" circular src={userPic} />
+        <Image size="small" circular src={userPic} style={{display: "flwx", alignSelf: "center", height: "150px"}} />
 
-        <Item.Content>
+        <Item.Content style={{marginBottom: "5px"}}>
           <Item.Description>
-            <Card centered fluid>
+            <Card fluid>
               <Card.Content>
                 <Card.Header>{username}'s Snapshot</Card.Header>
               </Card.Content>
-              <Card.Content>
+              <Card.Content style={{height: "135px"}}>
                 <Card.Description>
                   <span>{userRoomKarma} Karma Points</span> <br />
                   <span>
