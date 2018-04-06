@@ -5,11 +5,9 @@ import Paper from 'material-ui/Paper';
 import MenuItem from 'material-ui/MenuItem';
 import TextField from 'material-ui/TextField';
 import DatePicker from 'material-ui/DatePicker';
-import SelectField from 'material-ui/SelectField';
 import RaisedButton from 'material-ui/RaisedButton';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import ActionDone from 'material-ui/svg-icons/action/done';
-import { orange500, blue500 } from 'material-ui/styles/colors';
 import "../Styles/ModalStyles.css";
 
 import { insertIntoSortedTask } from "../../Dashboard/Actions/DashboardActions";
@@ -24,16 +22,10 @@ const mapDispatchToProps = dispatch => {
 
 const styles = {
     errorStyle: {
-        color: orange500,
-    },
-    underlineStyle: {
-        borderColor: orange500,
-    },
-    floatingLabelStyle: {
-        color: orange500,
+        color: "#C62828",
     },
     floatingLabelFocusStyle: {
-        color: blue500,
+        color: "#A2DEFD",
     },
 };
 
@@ -79,7 +71,7 @@ class AddTaskModal extends React.Component {
     }
 
     render() {
-        const { active, task, roommates, assignedRoommates, handleClose, handleChange, selectedDate, handleDate } = this.props;
+        const { task, roommates, assignedRoommates, handleClose, handleChange, selectedDate, handleDate } = this.props;
         console.log(this.state);
         return (
             <div className="modal" onClick={handleClose}>
@@ -91,15 +83,19 @@ class AddTaskModal extends React.Component {
                     />
                     <TextField
                       name="title"
+                      value={task.title}
                       hintText="Enter task"
                       floatingLabelText="Task"
-                      onChange={this.handleChange}
+                      onChange={this.handleOnChange}
+                      errorStyle={styles.errorStyle}
+                      floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
                     />
                     <TextField
-                      name="message"
+                      name="description"
+                      value={task.description}
                       hintText="Enter task description"
                       floatingLabelText="Description"
-                      onChange={this.handleChange}
+                      onChange={this.handleOnChange}
                     />
                     <TextField
                       name="karma"
