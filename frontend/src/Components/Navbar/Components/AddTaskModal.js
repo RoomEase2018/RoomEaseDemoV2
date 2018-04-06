@@ -14,10 +14,10 @@ import { insertIntoSortedTask } from "../../Dashboard/Actions/DashboardActions";
 
 const mapDispatchToProps = dispatch => {
     return {
-    insertIntoSortedTask: task => {
-      dispatch(insertIntoSortedTask(task));
+        insertIntoSortedTask: task => {
+          dispatch(insertIntoSortedTask(task));
+        }
     }
-  }
 }
 
 const styles = {
@@ -43,11 +43,17 @@ class AddTaskModal extends React.Component {
         super();
 
         this.state = {
-
+            apt_id: 1,
+            title: '',
+            message: '',
+            from_user_id: 1,
+            to_user_id: 1,
+            due_date: new Date(),
+            karma: 0,
         }
     }
 
-    handleChange = e => {
+    handleInputChange = e => {
         this.setState({
             [e.target.name]: e.target.value
         })
@@ -61,13 +67,23 @@ class AddTaskModal extends React.Component {
 
     handleSubmit = e => {
         console.log('submitted ', this.state);
-        // this.props.insertIntoSortedTask({
-
-        // })
+        console.log('props: ', this.props.insertIntoSortedTask)
+        const { apt_id, title, to_user_id, from_user_id, due_date, karma, message } = this.state;
+        this.props.insertIntoSortedTask({
+            title: title,
+            apt_id: apt_id,
+            to_user_id: to_user_id,
+            from_user_id: from_user_id,
+            due_date: due_date,
+            karma: karma,
+            message: message
+        })
     }
 
     handleSelectRoommate = (e, a) => {
-        console.log('selectRoommate ', a.value)
+        this.setState({
+            to_user_id: 1
+        })
     }
 
     render() {
@@ -83,25 +99,25 @@ class AddTaskModal extends React.Component {
                     />
                     <TextField
                       name="title"
-                      value={task.title}
+                      // value={task.title}
                       hintText="Enter task"
                       floatingLabelText="Task"
-                      onChange={this.handleOnChange}
+                      onChange={this.handleInputChange}
                       errorStyle={styles.errorStyle}
                       floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
                     />
                     <TextField
-                      name="description"
-                      value={task.description}
+                      name="message"
+                      // value={task.description}
                       hintText="Enter task description"
                       floatingLabelText="Description"
-                      onChange={this.handleOnChange}
+                      onChange={this.handleInputChange}
                     />
                     <TextField
                       name="karma"
                       hintText="Enter karma value"
                       floatingLabelText="Karma Awarded"
-                      onChange={this.handleChange}
+                      onChange={this.handleInputChange}
                     />
                     <br />
                     <DatePicker 
@@ -131,4 +147,4 @@ class AddTaskModal extends React.Component {
     }
 }
 
-export default connect(mapDispatchToProps)(AddTaskModal);
+export default connect(null, mapDispatchToProps)(AddTaskModal);
