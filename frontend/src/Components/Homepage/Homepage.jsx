@@ -75,7 +75,6 @@ class Homepage extends Component {
             <div className="RoomEase">
                 <HomepageComponent
                     handleChange={handleChange}
-                    handleLogin={handleLogin}
                     handleSignUp={handleSignUp}
                     login={login}
                 />
