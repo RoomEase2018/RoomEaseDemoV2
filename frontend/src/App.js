@@ -17,7 +17,7 @@ class App extends Component {
         {this.props.Profile.loggedIn && <Navbar />}
         {this.props.Profile.loggedIn ? (
           <Switch>
-            <Route exact path="/" component={UserProfile} />
+            <Route exact path="/" component={Dashboard} />
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/apartment" component={Apartment} />
             <Route path="/profile" component={UserProfile} />

@@ -3,7 +3,7 @@ import HomepageComponent from "./Components/HomepageComponent";
 import { connect } from "react-redux";
 import { Redirect } from "react-router";
 import axios from "axios";
-import "./Styles/Homepage.scss";
+import "./Styles/Homepage.css";
 
 class Homepage extends Component {
     constructor() {
@@ -60,22 +60,21 @@ class Homepage extends Component {
 
     login = () => {
         const {dispatch} = this.props
-        dispatch({type:"PROFILE_USER_LOGGED_IN"})
+        dispatch({type:"LOGIN"})
     }
 
     render() {
         const { handleChange, handleLogin, handleSignUp, login } = this;
         console.log(this.props);
-
+        console.log(this.state)
         if (this.props.Profile.loggedIn) {
-            return <Redirect to="/" />
+            return <Redirect to="/dashboard" />
         };
 
         return (
             <div className="RoomEase">
                 <HomepageComponent
                     handleChange={handleChange}
-                    handleLogin={handleLogin}
                     handleSignUp={handleSignUp}
                     login={login}
                 />
