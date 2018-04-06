@@ -104,10 +104,10 @@ class UpNextContainer extends Component {
       return (
         // className="up_next"
         <Grid.Row>
-          <Grid.Column width={2}>
+          {/* <Grid.Column width={2}>
             <Progressbar karma={sortedTasks[index].karma} />
-          </Grid.Column>
-          <Grid.Column width={11}>
+          </Grid.Column> */}
+          <Grid.Column fluid>
             <NextTask 
               task={sortedTasks[index]} 
               handleIndexButton={this.handleIndexButton}

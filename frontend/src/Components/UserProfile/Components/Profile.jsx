@@ -1,10 +1,12 @@
 import React from "react";
 import UserSnapshot from "./UserSnapshot";
 import "../Styles/Profile.css";
-import ApartmentList from "./ApartmentList";
-import Activity from "./Activity";
-import Badges from "./Badges";
 import Setup from "./Setup";
+import Badges from "./Badges";
+import Activity from "./Activity";
+import ApartmentList from "./ApartmentList";
+import ApartmentGoals from './ApartmentGoals';
+import ApartmentGraph from './ApartmentGraph';
 import { Grid } from "semantic-ui-react";
 
 const Profile = ({ user }) => {
@@ -28,6 +30,8 @@ const Profile = ({ user }) => {
             </Grid.Row>
             <Grid.Row stretched centered>
                 Apartment Goals and Rewards
+                <ApartmentGoals />
+                <ApartmentGraph />
             </Grid.Row>
         </Grid>
     );
