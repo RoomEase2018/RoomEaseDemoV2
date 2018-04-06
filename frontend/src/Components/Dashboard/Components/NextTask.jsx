@@ -20,15 +20,18 @@ class NextTask extends Component {
 				</Card.Content>
 				<Card.Content textAlign="center">
 					<Card.Description>
-						<h3 style={{display: "inline", marginRight: "1em"}}>{`${task.title}: ${task.karma} Karma Points`}</h3>
-						<Checkbox handleCompletedCheckbox={handleCompletedCheckbox} />
-						<h4>Due {`${months[task.due_date.getMonth()]} ${task.due_date.getDate()}, ${task.due_date.getFullYear()}`}</h4>
+						<h3 style={{display: "inline", marginRight: "1em"}}>{`${task.title}: Due ${months[task.due_date.getMonth()]} ${task.due_date.getDate()}, ${task.due_date.getFullYear()}`}</h3>
+						{/* <Checkbox handleCompletedCheckbox={handleCompletedCheckbox} /> */}
+						<h4>{`${task.karma} Karma Points`}</h4>
 					</Card.Description>
 					<Card.Description>
 						<h5>{task.message ? `Message: ${task.message}` : ""}</h5>
 					</Card.Description>
+					<br />
+					<Checkbox handleCompletedCheckbox={handleCompletedCheckbox} />
 				</Card.Content>
-				<Card.Content extra textAlign="right">
+				
+				<Card.Content extra textAlign="center">
 					{/* <div className='ui two buttons'>
 						<Button basic fluid={false} color='grey' value='previous' onClick={handleIndexButton}>Back</Button>
 						<Button basic fluid={false} color='green'value='next' onClick={handleIndexButton}>Next</Button>
