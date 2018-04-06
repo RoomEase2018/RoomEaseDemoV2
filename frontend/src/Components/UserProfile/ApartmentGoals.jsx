@@ -28,11 +28,11 @@ class ApartmentGoals extends Component {
   	}
     return (
       <div>
-      	<h1>total karma: {this.apartmentKarma}</h1>
+      	<h1 style={{textDecoration: 'underline'}}>total karma: {this.apartmentKarma}</h1>
 				{this.props.goals.map(goal => (
 					<div>
-						<div>{goal.title}</div>
-						<div>Karma Needed: {goal.karma}</div>
+						<div><h1>{goal.title}</h1></div>
+						<div><h3>Karma Needed: {goal.karma}</h3></div>
             <button>Redeem</button>
 					</div>
 				))}      	
