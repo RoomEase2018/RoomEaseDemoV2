@@ -8,11 +8,10 @@ class HomepageComponent extends Component {
                 <div className="home_nav">
                     <div className="login_menu">
                         <div className="logo">
-                            <img src="https://i.imgur.com/m6bz64S.png" />
                             <h1>RoomEase</h1>
                         </div>
                         <div className="login_form">
-                            <form onSubmit={handleLogin}>
+                            <form>
                                 <input
                                     type="text"
                                     placeholder="username"
@@ -25,10 +24,9 @@ class HomepageComponent extends Component {
                                     name="loginPassword"
                                     onChange={handleChange}
                                 />
-                                <input type="submit" value="login" />
+                                <input type="submit" value="login" onClick={login} />
                             </form>
                         </div>
-                        {/* <button onClick={login}>LOGIN</button> */}
                     </div>
                 </div>
 
@@ -36,32 +34,7 @@ class HomepageComponent extends Component {
                     <div className="about_us">
                         <h1>About Us</h1>
                         <p>
-                            blah blah blah blah blah blah blah blah blah blah
-                            blah blah blah blah blah blah blah blah blah blah
-                            blah blah blah blah blah blah blah blah blah blah
-                            blah blah blah blah blah blah blah blah blah blah
-                            blah blah blah blah blah blah blah blah blah blah
-                            blah blah blah blah blah blah blah blah blah blah
-                            blah blah blah blah blah blah blah blah blah blah
-                            blah blah blah blah blah blah blah blah blah blah
-                            blah blah blah blah blah blah blah blah blah blah
-                            blah blah blah blah blah blah blah blah blah blah
-                            blah blah blah blah blah blah blah blah blah blah
-                            blah blah blah blah blah blah blah blah blah blah
-                            blah blah blah blah blah blah blah blah blah blah
-                            blah blah blah blah blah blah blah blah blah blah
-                            blah blah blah blah blah blah blah blah blah blah
-                            blah blah blah blah blah blah blah blah blah blah
-                            blah blah blah blah blah blah blah blah blah blah
-                            blah blah blah blah blah blah blah blah blah blah
-                            blah blah blah blah blah blah blah blah blah blah
-                            blah blah blah blah blah blah blah blah blah blah
-                            blah blah blah blah blah blah blah blah blah blah
-                            blah blah blah blah blah blah blah blah blah blah
-                            blah blah blah blah blah blah blah blah blah blah
-                            blah blah blah blah blah blah blah blah blah blah
-                            blah blah blah blah blah blah blah blah blah blah
-                            blah blah blah blah blah{" "}
+
                         </p>
                     </div>
                     <div className="signup_form">

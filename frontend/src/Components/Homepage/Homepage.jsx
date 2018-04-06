@@ -60,13 +60,13 @@ class Homepage extends Component {
 
     login = () => {
         const {dispatch} = this.props
-        dispatch({type:"PROFILE_USER_LOGGED_IN"})
+        dispatch({type:"LOGIN"})
     }
 
     render() {
         const { handleChange, handleLogin, handleSignUp, login } = this;
         console.log(this.props);
-
+        console.log(this.state)
         if (this.props.Profile.loggedIn) {
             return <Redirect to="/" />
         };
