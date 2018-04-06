@@ -78,6 +78,8 @@ class AddTaskModal extends React.Component {
             karma: karma,
             message: message
         })
+        
+        this.props.handleClose();
     }
 
     handleSelectRoommate = (e, a) => {
@@ -90,7 +92,7 @@ class AddTaskModal extends React.Component {
         const { task, roommates, assignedRoommates, handleClose, handleChange, selectedDate, handleDate } = this.props;
         console.log(this.state);
         return (
-            <div className="modal" onClick={handleClose}>
+            <div className="modal" >
                 <Paper className="form" zDepth={2}>
                     <Dropdown
                         onChange={handleChange}

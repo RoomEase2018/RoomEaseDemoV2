@@ -25,7 +25,7 @@ class NextTask extends Component {
     return (
       // className="next_task" id="next-task"
       <Card fluid centered style={{ padding: "0" }}>
-        <Card.Content style={{ backgroundColor: "rgb(162, 222, 253)" }}>
+        <Card.Content>
           <Card.Header>Upcoming Task:</Card.Header>
           <Card.Meta>
             {" "}
@@ -56,19 +56,18 @@ class NextTask extends Component {
           textAlign="center"
           style={{
             display: "flex",
-            backgroundColor: "rgb(162, 222, 253)",
             justifyContent: "space-between"
           }}
         >
-          <FlatButton value="previous" onClick={handleIndexButton}>
-            back
+          <FlatButton value="previous" onClick={handleIndexButton} style={{backgroundColor:"#00E676", color: "white", fontSize:"18px"}} >
+            Back
           </FlatButton>
           <FlatButton
-            value="previous"
+            value="next"
             onClick={handleIndexButton}
-            style={{ marginLeft: "900px" }}
+            style={{ marginLeft: "900px", backgroundColor: "#00E676", fontSize:"18px", color:"white"}}
           >
-		  next
+            Next
           </FlatButton>
         </Card.Content>
       </Card>
