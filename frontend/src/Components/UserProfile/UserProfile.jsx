@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import Profile from './Components/Profile';
-import ApartmentGoals from './ApartmentGoals';
-import ApartmentGraph from './ApartmentGraph'
 
 class UserProfile extends Component {
     setUser = (user) => {
@@ -18,8 +16,6 @@ class UserProfile extends Component {
                   user={this.props.Profile} 
                   setUser={this.setUser}
                 />
-                <ApartmentGoals />
-                <ApartmentGraph />
             </div>
         );
     }
