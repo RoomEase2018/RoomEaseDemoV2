@@ -1,0 +1,35 @@
+.userProfile {
+    height: 100%;
+    .profile { //ui centereed container
+        div { // centered stretched
+            div:nth-child(2) {
+                .list {
+                    .item:not(:first-child) {
+                        padding: 0 0 2px 0;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+        div:nth-child(2) { // stretched row
+            div { // stretch column
+                div { //UI Fluid
+                    div:nth-child(2) { // content
+                        align-items: center;
+                        .description { // description
+                            line-height: 2em;
+                            .pics{
+                                display: flex;
+                                float: right;
+                                img {
+                                    border-radius: 50%;
+                                    height: 35px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
