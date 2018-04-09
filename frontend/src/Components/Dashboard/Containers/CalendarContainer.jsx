@@ -22,7 +22,7 @@ class Calendar extends Component {
   eventStyleGetter = (event, start, end, isSelected) => {
     let backgroundColor = '#3474aa';
     if (event.cost > 0) {
-      backgroundColor = 'red';
+      backgroundColor = 'darkgreen';
     }
     
     var style = {
@@ -31,7 +31,9 @@ class Calendar extends Component {
         opacity: 0.8,
         color: 'white',
         border: '0px',
-        display: 'block'
+        display: 'block',
+        lineHeight: "2em",
+        margin: "0 0 10px"
     };
     return {
         style: style
