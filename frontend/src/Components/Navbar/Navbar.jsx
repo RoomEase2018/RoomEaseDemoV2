@@ -20,17 +20,22 @@ class Navbar extends React.Component {
         {
           text: 'Aiden',
           value: 'Aiden',
-          image: { avatar: true, src: 'https://react.semantic-ui.com/assets/images/avatar/small/justen.jpg' },
+          image: { avatar: true, src: 'https://react.semantic-ui.com/assets/images/avatar/small/matthew.png' },
         },
         {
           text: 'Benjy',
           value: 'Benjy',
-          image: { avatar: true, src: 'https://react.semantic-ui.com/assets/images/avatar/small/christian.jpg' },
+          image: { avatar: true, src: 'https://react.semantic-ui.com/assets/images/avatar/small/daniel.jpg' },
+        },
+        {
+          text: 'Ryan',
+          value: 'Ryan',
+          image: { avatar: true, src: 'htgit tps://react.semantic-ui.com/assets/images/avatar/small/elliot.jpg' },
         },
         {
           text: 'Eric',
           value: 'Eric',
-          image: { avatar: true, src: 'https://react.semantic-ui.com/assets/images/avatar/small/matt.jpg' },
+          image: { avatar: true, src: 'https://react.semantic-ui.com/assets/images/avatar/small/christian.jpg' },
         },
       ],
       selectedDate: null,
