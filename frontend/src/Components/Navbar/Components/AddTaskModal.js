@@ -66,8 +66,8 @@ class AddTaskModal extends React.Component {
     }
 
     handleSubmit = e => {
-        console.log('submitted ', this.state);
-        console.log('props: ', this.props.insertIntoSortedTask)
+        // console.log('submitted ', this.state);
+        // console.log('props: ', this.props.insertIntoSortedTask)
         const { apt_id, title, to_user_id, from_user_id, due_date, karma, message } = this.state;
         this.props.insertIntoSortedTask({
             title: title,

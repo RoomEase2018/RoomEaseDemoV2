@@ -27,7 +27,7 @@ const noteStyle = [
         fontFamily: "Schoolbell",
         fontSize: "1.5em",
         position: "absolute",
-        backgroundColor: "pink"
+        backgroundColor: "#FFFE91"
     },
     {
         top: "166px",
@@ -51,7 +51,7 @@ const noteStyle = [
         fontFamily: "Schoolbell",
         fontSize: "1.5em",
         position: "absolute",
-        backgroundColor: "#FFFE91"
+        backgroundColor: "pink"
     }
 ]
 

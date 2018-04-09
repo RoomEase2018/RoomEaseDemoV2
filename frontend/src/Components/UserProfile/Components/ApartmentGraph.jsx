@@ -23,12 +23,12 @@ class ApartmentGraph extends Component {
 
         this.domain = [
             [0, 100],
-            [0, 200]
+            [0, 150]
         ]
 
         this.title = [
-            '% of tasks done on time',
-            'Total karma accumulated'
+            '% of Tasks Done on Time',
+            'Total Karma Accumulated'
         ]
 
         this.state = {
@@ -69,7 +69,7 @@ class ApartmentGraph extends Component {
             }}>
                 <div>
                     <h1 style={{ lineHeight: "1.5em" }}>
-                        Percentage of tasks done on time
+                        {this.title[index]}
                     </h1>
                     <select name='jesus take the wheel' onChange={this.handleSelect}>
                         <option value={0}>tasks</option>

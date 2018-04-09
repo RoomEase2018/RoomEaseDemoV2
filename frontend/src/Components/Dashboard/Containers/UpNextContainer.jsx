@@ -65,17 +65,18 @@ class UpNextContainer extends Component {
     let newIndex;
     const len = this.props.sortedTasks.length;
     const { index } = this.state;
+    
     if (len > 5) {
-      if (e.target.value === 'next') {
+      if (e === 'next') {
         newIndex = (5 + index + 1) % 5;
       } else {
         newIndex = (5 + index - 1) % 5;
       }
     } else {
-      if (e.target.value === 'next') {
-        newIndex = index + (len - index + 1) % len;
+      if (e === 'next') {
+        newIndex = index + (len + index + 1) % len;
       } else {
-        newIndex = index + (len - index - 1) % len;
+        newIndex = index + (len + index - 1) % len;
       }
     }
 
@@ -86,7 +87,12 @@ class UpNextContainer extends Component {
 
   render() {
     const { successQueries, sortedTasks } = this.props;
-    
+    // console.log(sortedTasks, this.state.index, sortedTasks[this.state.index]);
+
+    console.log('index: ', this.state.index);
+    console.log(sortedTasks[this.state.index]);
+
+
     if ( !successQueries.fetchAllActiveTasks ||
       !successQueries.fetchAllActiveRecurringTasks ||
       !successQueries.fetchAllApartmentGoals 
