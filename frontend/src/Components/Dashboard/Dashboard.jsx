@@ -58,7 +58,7 @@ class Dashboard extends Component {
     return (
       <Grid className="dashboard" container centered stackable columns="equal" verticalAlign="middle">
           <UpNextContainer />
-        <Grid.Row>
+        <Grid.Row className='calendar-container'>
           <CalendarContainer />
         </Grid.Row>
         <Grid.Row>

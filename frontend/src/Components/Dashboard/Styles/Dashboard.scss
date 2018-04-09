@@ -1,100 +1,62 @@
 @import "../../sassStyles.scss";
-
 .dashboard {
     display: grid;
     justify-items: center;
-    grid-row-gap: 20px;
     .upcoming-task-warapper-row {
+        margin-bottom: 30px;
         .upcoming-task-warapper-col {
             box-shadow: $all-box-shadow;
             .upcoming-task-inner {
-            }
-        }
-    }
-    // .up_next {
-        // background-color: white;
-        // border: $all-borders;
-        // height: 200px;
-        // width: 1000px;
-        // display: grid;
-        // align-items: center;
-        // justify-items: center;
-        // grid-template-columns: auto 100px 750px 150px auto;
-        // grid-template-areas: ". progress_bar next_task checkbox .";
-        // box-shadow: $all-box-shadow;
-        // .progress_bar {
-        //     grid-area: progress_bar;
-        //     height: 100px;
-        //     width: 100px;
-        //     padding-left: 10px;
-        // }
-        // .next_task {
-        //     grid-area: next_task;
-        //     font-size: 50px;
-        //     text-align: center;
-        //     line-height: 1em;
-        //     width: 600px;
-            p {
-                margin: 0;
-                text-shadow: 1px 1px 3px #888;
-            }
-            button {
-                border: none;
-                margin: 0 10px;
-            }
-            button:focus {
-                outline: none;
-            }
-        }
-        .checkbox {
-            grid-area: checkbox;
-            justify-self: start;
-            display: flex;
-            align-items: center;
-            font-size: 20px;
-            margin-left: 5px;
-            input {
-                zoom: 2;
-                margin-right: 5px;
-            }
-        }
-    }
-
-    .calendar {
-        .rbc-calendar {
-            .rbc-toolbar {
-                .rbc-btn-group {
-                    background-color: white;
-                    background-clip: padding-box;
+                .upcoming-task {
+                    .upcoming-task-label {
+                        font-size: 3em;
+                    }
+                }
+                .upcoming-task-description {
+                    h3 {
+                        font-size: 2em;
+                    }
                 }
             }
-            .rbc-time-view {
-                .rbc-time-header {
-                    border: $all-borders;
-                    box-shadow: $all-box-shadow;
-                    background-color: white;
-                    .rbc-label {
-                        padding: 0;
+        }
+    }
+    .calendar-container {
+        .calendar {
+            margin-bottom: 30px;
+            .rbc-calendar {
+                .rbc-toolbar {
+                    .rbc-btn-group {
+                        background-color: white;
+                        background-clip: padding-box;
                     }
-                    .rbc-time-header-content {
-                        .rbc-row {
-                            .rbc-today {
+                }
+                .rbc-time-view {
+                    .rbc-time-header {
+                        border: $all-borders;
+                        box-shadow: $all-box-shadow;
+                        background-color: white;
+                        .rbc-label {
+                            padding: 0;
+                        }
+                        .rbc-time-header-content {
+                            .rbc-row {
+                                .rbc-today {}
                             }
                         }
                     }
+                    .rbc-time-content {
+                        display: none;
+                    }
                 }
-                .rbc-time-content {
-                    display: none;
+                .rbc-month-view {
+                    height: 500px;
+                    background-color: white;
+                    box-shadow: $all-box-shadow;
                 }
-            }
-            .rbc-month-view {
-                height: 500px;
-                background-color: white;
-                box-shadow: $all-box-shadow;
-            }
-            .rbc-agenda-view {
-                background-color: white;
-                box-shadow: $all-box-shadow;
+                .rbc-agenda-view {
+                    background-color: white;
+                    box-shadow: $all-box-shadow;
+                }
             }
         }
     }
@@ -111,10 +73,8 @@
             background-color: rgb(255, 255, 138);
             border: 1px black solid;
         }
+        .invisible {
+            opacity: 0;
+        }
     }
-}
-
-
-.invisible {
-    opacity: 0;
 }
