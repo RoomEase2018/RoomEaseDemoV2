@@ -19,11 +19,12 @@
                         .description { // description
                             line-height: 2em;
                             .pics{
-                                display: flex;
+                                // display: flex;
                                 float: right;
                                 img {
                                     border-radius: 50%;
                                     height: 35px;
+                                    width: 35px;
                                 }
                             }
                         }

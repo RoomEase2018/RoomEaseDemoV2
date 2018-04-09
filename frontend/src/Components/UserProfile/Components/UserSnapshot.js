@@ -17,9 +17,12 @@ const UserSnapshot = ({ username, userPic, userRoomKarma, userTask }) => (
               <Card.Content style={{height: "135px"}}>
                 <Card.Description>
                   <span>{userRoomKarma} Karma Points</span> <br />
-                  <span>
-                    Upcoming Task: {`${userTask[0].desc} ${userTask[0].date}`}
-                  </span>
+                  <div>
+                    Next Task: {`${userTask[0].desc} ${userTask[0].date}`}
+                  </div>
+                  <div>
+                    Next Achievement: Roommate Bonding (Complete 5 Apartment Goals)
+                  </div>
                 </Card.Description>
 
               </Card.Content>
