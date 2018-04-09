@@ -18,6 +18,29 @@ class Calendar extends Component {
     super();
   }
 
+
+  eventStyleGetter = (event, start, end, isSelected) => {
+    console.log(event, start, end, isSelected);
+    let backgroundColor = '#3474aa';
+    if (event.cost > 0) {
+      backgroundColor = 'red';
+    }
+    
+    var style = {
+        backgroundColor: backgroundColor,
+        borderRadius: '5px',
+        opacity: 0.8,
+        color: 'white',
+        border: '0px',
+        display: 'block'
+    };
+    return {
+        style: style
+    };
+}
+
+
+
   render() {
     const { events } = this.props.sortedTasks;
     if (this.props.sortedTasks.length === 0) {
@@ -32,7 +55,8 @@ class Calendar extends Component {
           title: task.title,
           allDay: true,
           start: new Date(task.due_date),
-          end: new Date(task.due_date)
+          end: new Date(task.due_date),
+          cost: task.cost
         })
       })
       return (
@@ -44,6 +68,7 @@ class Calendar extends Component {
             step={60}
             showMultiDayTimes
             defaultDate={new Date()}
+            eventPropGetter={this.eventStyleGetter}
           />
         </Grid.Column>  
       );
