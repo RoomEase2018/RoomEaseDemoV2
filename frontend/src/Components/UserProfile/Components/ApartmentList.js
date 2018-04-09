@@ -21,10 +21,10 @@ class ApartmentList extends Component {
                                 <Image src="https://react.semantic-ui.com/assets/images/avatar/small/daniel.jpg" avatar />
                             </span>
                         </Card.Description>
-                        {/* <Card.Description> */}
+                        <Card.Description>
                             <h3>Koala Bears' Goals</h3>
                             <ApartmentGoals />
-                        {/* </Card.Description> */}
+                        </Card.Description>
                     </Card.Content>
                 </Card>
             </Grid.Column>

@@ -10,19 +10,48 @@ const mapStateToProps = state => {
 }
 
 const legend = {
-    width: '200px',
-    height: '200px',
-    backgroundColor: '#77add7',
-    position: 'absolute',
-    top: '24px',
-    right: '25px'
+    width: "100px",
+    height: "160px",
+    backgroundColor: "none",
+    position: "absolute",
+    top: "24px",
+    right: "25px",
+    border: "5px 5px 5px black"
 }
 
 const noteStyle = [
-    { top: '266px', left: '222px', fontFamily: "Schoolbell", fontSize: "1.5em", position: 'absolute', backgroundColor: 'pink' },
-    { top: '166px', left: '445px', fontFamily: "Schoolbell", fontSize: "1.5em", position: 'absolute', backgroundColor: 'lightblue' },
-    { top: '451px', left: '550px', fontFamily: "Schoolbell", fontSize: "1.5em", position: 'absolute', backgroundColor: 'violet' },
-    { top: '312px', left: '733px', fontFamily: "Schoolbell", fontSize: "1.5em", position: 'absolute', backgroundColor: 'lightpurple' }
+    {
+        top: "266px",
+        left: "222px",
+        fontFamily: "Schoolbell",
+        fontSize: "1.5em",
+        position: "absolute",
+        backgroundColor: "pink"
+    },
+    {
+        top: "166px",
+        left: "445px",
+        fontFamily: "Schoolbell",
+        fontSize: "1.5em",
+        position: "absolute",
+        backgroundColor: "lightblue"
+    },
+    {
+        top: "451px",
+        left: "550px",
+        fontFamily: "Schoolbell",
+        fontSize: "1.5em",
+        position: "absolute",
+        backgroundColor: "violet"
+    },
+    {
+        top: "312px",
+        left: "733px",
+        fontFamily: "Schoolbell",
+        fontSize: "1.5em",
+        position: "absolute",
+        backgroundColor: "#FFFE91"
+    }
 ]
 
 class Bulletin extends Component {
@@ -50,11 +79,46 @@ class Bulletin extends Component {
             <div className="bulletin">
                 <h1> Apartment Bulletin </h1>
                 <div style={legend}>
-                    <p>user1</p>
-                    <p>user2</p>
-                    <p>user3</p>
-                    <p>user4</p>
-                    <button>+ note</button>
+                    <span
+                        style={{
+                            backgroundColor: "pink",
+                            borderRadius: "50px",
+                            lineHeight: "1.5em",
+                            padding: "0 27px"
+                        }}>
+                        Aiden
+                    </span>
+                    <br />
+                    <span
+                        style={{
+                            backgroundColor: "violet",
+                            borderRadius: "50px",
+                            lineHeight: "1.5em",
+                            padding: "0 30px"
+                        }}>
+                        Ryan
+                    </span>
+                    <br />
+                    <span
+                        style={{
+                            backgroundColor: "lightblue",
+                            borderRadius: "50px",
+                            lineHeight: "1.5em",
+                            padding: "0 35px"
+                        }}>
+                        Ben
+                    </span>
+                    <br />
+                    <span
+                        style={{
+                            backgroundColor: "#FFFE91",
+                            borderRadius: "50px",
+                            lineHeight: "1.5em",
+                            padding: "0 35px"
+                        }}>
+                        Eric
+                    </span>
+                    <button>Create Note</button>
                 </div>
                 {notes.map((note, i) => (
                     <Note
