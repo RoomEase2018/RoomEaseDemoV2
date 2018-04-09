@@ -116,7 +116,7 @@ INSERT INTO bulletin_notes (apt_id, from_user_id, message) VALUES (1, 4, 'who wa
 -- CREATING APARTMENT GOALS
 -- ################################################
 
-INSERT INTO goals_apartment (apt_id, from_user_id, title, message, karma) VALUES (1, 3, 'PARTAYY', 'drinks on Ruben', 100);
+INSERT INTO goals_apartment (apt_id, from_user_id, title, message, karma) VALUES (1, 3, 'Friday Night Bar Hop', '', 100);
 
-INSERT INTO goals_apartment (apt_id, from_user_id, title, message, karma) VALUES (1, 2, 'brunch' , '', 50);
+INSERT INTO goals_apartment (apt_id, from_user_id, title, message, karma) VALUES (1, 2, 'Brunch At Locanda Verde' , '', 200);
 
