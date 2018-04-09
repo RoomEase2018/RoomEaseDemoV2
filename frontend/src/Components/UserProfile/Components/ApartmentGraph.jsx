@@ -60,7 +60,7 @@ class ApartmentGraph extends Component {
                     <XAxis dataKey="name" />
                     <YAxis domain={[0, 100]} />
                     <Tooltip />
-                    <Bar dataKey="percentage" fill="#8884d8" />
+                    <Bar dataKey="percentage" fill="#8BBFD5" />
                 </BarChart>
             </div>
         )
