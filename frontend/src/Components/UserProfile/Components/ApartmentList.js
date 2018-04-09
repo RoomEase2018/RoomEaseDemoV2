@@ -12,10 +12,10 @@ class ApartmentList extends Component {
                 textAlign="left"
                 style={{ padding: "0" }}>
                 <Card fluid style={{ padding: "0", width: "540px" }}>
-                    <Card.Content>
+                    <Card.Content style={{height: "50px"}}>
                         <Card.Header>{username}'s Apartments</Card.Header>
                     </Card.Content>
-                    <Card.Content className="apartment-name-wrapper">
+                    <Card.Content className="apartment-name-wrapper" style={{height: "303.16px"}}>
                         <Card.Description className="apartment-name">
                             <span style={{ fontSize: "2em" }}>Koala Bears</span>{" "}
                             <span className="pics">

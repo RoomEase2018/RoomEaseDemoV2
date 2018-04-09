@@ -70,11 +70,11 @@ class ApartmentGraph extends Component {
                 <div>
                     <h1 style={{ lineHeight: "1.5em" }}>
                         {this.title[index]}
-                    </h1>
-                    <select name='jesus take the wheel' onChange={this.handleSelect}>
+                    <select style={{float: "right", fontSize: "12px", marginTop: "10px", marginRight: "50px"}} name='jesus take the wheel' onChange={this.handleSelect}>
                         <option value={1}>Karma</option>
                         <option value={0}>Tasks</option>
                     </select>
+                    </h1>
                 </div>
                 <BarChart
                     width={550}
