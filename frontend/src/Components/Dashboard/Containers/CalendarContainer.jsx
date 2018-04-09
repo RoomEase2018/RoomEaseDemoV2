@@ -20,7 +20,6 @@ class Calendar extends Component {
 
 
   eventStyleGetter = (event, start, end, isSelected) => {
-    console.log(event, start, end, isSelected);
     let backgroundColor = '#3474aa';
     if (event.cost > 0) {
       backgroundColor = 'red';

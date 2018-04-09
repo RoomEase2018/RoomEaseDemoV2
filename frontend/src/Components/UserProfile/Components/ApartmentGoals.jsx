@@ -3,36 +3,40 @@ import { connect } from "react-redux";
 
 const mapStateToProps = state => {
   return {
-    completedTasks: state.Dashboard.completedTasks,
     goals: state.Dashboard.goals
   };
 };
 
 class ApartmentGoals extends Component {
-  constructor() {
-  	super();
+  constructor(props) {
+  	super(props);
 		this.apartmentKarma = 120;
 
-		this.redeemGoal = e => {
-			console.log(e)
-		}
+    this.state = {
+      goals: [...props.goals]
+    }	
+  }
+  
+  redeemGoal = (i, karma) => {
+    if (karma < this.apartmentKarma) {
+      const newGoal = [...this.state.goals];
+      newGoal.splice(i, 1);
+      this.apartmentKarma -= karma;
+      this.setState({
+        goals: newGoal
+      })
+    }
   }
 
   render() {
-  	console.log(this.props.completedTasks)
-  	if (this.props.completedTasks.length) {
-  		this.apartmentKarma = this.props.completedTasks.reduce((acc, el) => {
-  			return acc + el.karma;
-  		}, this.props.completedTasks[0].karma)
-  	}
     return (
       <div>
       	<h3>Total karma: {this.apartmentKarma}</h3>
-				{this.props.goals.map(goal => (
+				{this.state.goals.map((goal, i) => (
 					<div>
 						<div>{goal.title}</div>
 						<div>Total Karma Needed: {goal.karma}</div>
-            <button onClick={this.redeemGoal}>Redeem</button>
+            <button onClick={() => this.redeemGoal(i, goal.karma)}>Redeem</button>
 					</div>
 				))}      	
       </div>
