@@ -42,7 +42,7 @@ const noteStyle = [
         fontFamily: "Schoolbell",
         fontSize: "1.5em",
         position: "absolute",
-        backgroundColor: "violet"
+        backgroundColor: "lightgreen"
     },
     {
         top: "312px",
@@ -91,7 +91,7 @@ class Bulletin extends Component {
                     <br />
                     <span
                         style={{
-                            backgroundColor: "violet",
+                            backgroundColor: "lightgreen",
                             borderRadius: "50px",
                             lineHeight: "1.5em",
                             padding: "0 30px"
