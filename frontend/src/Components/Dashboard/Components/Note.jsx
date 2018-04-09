@@ -12,7 +12,7 @@ class Note extends Component {
 	}
 
 	render() {
-		const { message, index } = this.props;
+		const { message, index, noteStyle } = this.props;
 
 		if (message === null) {
 			return (
@@ -27,7 +27,7 @@ class Note extends Component {
 		else {
 			return (
 				<Draggable>
-					<div className='note' bounds='parent' style={{fontFamily: "Schoolbell", fontSize: "1.5em"}}>
+					<div className='note' bounds='parent' style={noteStyle}>
 						<img src="https://i.imgur.com/hTXnzMG.png" height="25px"/>            
 						<p>{message}</p>
 						{/* <button onClick={this.hideNote}>delete</button> */}
