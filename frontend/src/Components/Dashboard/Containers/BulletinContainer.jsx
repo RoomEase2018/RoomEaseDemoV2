@@ -3,6 +3,7 @@ import { connect } from "react-redux"
 import Note from "../Components/Note"
 import { fetchAllVisibleNotes } from "../Actions/DashboardActions"
 
+
 const mapStateToProps = state => {
     return {
         notes: state.Dashboard.notes
