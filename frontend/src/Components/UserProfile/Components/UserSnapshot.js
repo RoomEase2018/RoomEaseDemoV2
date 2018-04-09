@@ -8,7 +8,7 @@ const UserSnapshot = ({ username, userPic, userRoomKarma, userTask }) => (
       <Item>
         <Image size="small" circular src={userPic} style={{display: "flwx", alignSelf: "center", height: "150px"}} />
 
-        <Item.Content style={{marginBottom: "5px"}}>
+        <Item.Content style={{marginBottom: "5px", paddingRight: "25px"}}>
           <Item.Description>
             <Card fluid>
               <Card.Content>
