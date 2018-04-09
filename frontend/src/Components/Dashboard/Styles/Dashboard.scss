@@ -56,7 +56,6 @@
 
     .calendar {
         .rbc-calendar {
-            width: 900px;
             .rbc-toolbar {
                 .rbc-btn-group {
                     background-color: white;
@@ -95,7 +94,7 @@
     }
     .bulletin {
         height: 650px;
-        width: 900px;
+        width: 1125px;
         border: $bulletin-border;
         background-image: url('https://i.imgur.com/j3tBLzp.jpg');
         box-shadow: $all-box-shadow;
