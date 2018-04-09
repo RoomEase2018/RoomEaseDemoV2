@@ -7,8 +7,8 @@ class ApartmentList extends Component {
         const { username } = this.props
 
         return (
-            <Grid.Column verticalAlign="middle" textAlign="left">
-                <Card fluid>
+            <Grid.Column verticalAlign="middle" textAlign="left" style={{padding: "0"}}>
+                <Card fluid style={{padding: "0", width: "540px"}}>
                     <Card.Content>
                         <Card.Header>{username}'s Apartments</Card.Header>
                     </Card.Content>

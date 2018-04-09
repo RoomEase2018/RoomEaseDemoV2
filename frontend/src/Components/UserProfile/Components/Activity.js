@@ -5,7 +5,7 @@ class Activity extends React.Component {
 
     render() {
         return (
-            <Grid.Column>
+            <Grid.Column style={{paddingLeft: "0"}}>
                 <Card fluid>
                     <Card.Content>
                     <Card.Header>
