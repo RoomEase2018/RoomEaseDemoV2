@@ -78,13 +78,13 @@ INSERT INTO tasks_recurring_completed (task_id, apt_id, to_user_id, karma) VALUE
 -- INSERTING EXPENSES + PAYMENTS
 -- ################################################
 
-INSERT INTO tasks (apt_id, title, message, cost, from_user_id, to_user_id, due_date, karma) VALUES (1, 'Bought Milk', '', 1.50, 1, 2, DATE '2018/03/14', 10);
+INSERT INTO tasks (apt_id, title, message, cost, from_user_id, to_user_id, due_date, karma) VALUES (1, 'Reimburse Milk', '', 1.50, 1, 2, DATE '2018/03/14', 10);
 
-INSERT INTO tasks (apt_id, title, message, cost, from_user_id, to_user_id, due_date, karma) VALUES (1, 'Bought Toilet Paper', 'got the fancy tp :)', 4, 1, 2, DATE '2018/04/10', 10);
+INSERT INTO tasks (apt_id, title, message, cost, from_user_id, to_user_id, due_date, karma) VALUES (1, 'Reimburse Toilet Paper', 'got the fancy tp :)', 4, 1, 2, DATE '2018/04/10', 10);
 
-INSERT INTO tasks (apt_id, title, message, cost, from_user_id, to_user_id, due_date, karma) VALUES (1, 'Bought Bulk Gum', 'BOUGHT IN BULK', 20, 1, 4, DATE '2018/04/13', 10);
+INSERT INTO tasks (apt_id, title, message, cost, from_user_id, to_user_id, due_date, karma) VALUES (1, 'Reimburse Bulk Gum', 'BOUGHT IN BULK', 20, 1, 4, DATE '2018/04/13', 10);
 
-INSERT INTO tasks (apt_id, title, message, cost, from_user_id, to_user_id, due_date, karma) VALUES (1, 'Bought Groceries', 'boughgt a bunch of brocolli', 14, 1, 3, DATE '2018/04/15', 10);
+INSERT INTO tasks (apt_id, title, message, cost, from_user_id, to_user_id, due_date, karma) VALUES (1, 'Reimburse Groceries', 'boughgt a bunch of brocolli', 14, 1, 3, DATE '2018/04/15', 10);
 
 INSERT INTO tasks_completed (apt_id, to_user_id, task_id, karma) VALUES (1, 1, 1, 10);
 
