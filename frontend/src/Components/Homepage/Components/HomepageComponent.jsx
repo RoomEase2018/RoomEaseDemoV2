@@ -15,13 +15,13 @@ class HomepageComponent extends Component {
               <form>
                 <input
                   type="text"
-                  placeholder="username"
+                  placeholder="Username"
                   name="loginUsername"
                   onChange={handleChange}
                 />
                 <input
                   type="password"
-                  placeholder="password"
+                  placeholder="Password"
                   name="loginPassword"
                   onChange={handleChange}
                 />

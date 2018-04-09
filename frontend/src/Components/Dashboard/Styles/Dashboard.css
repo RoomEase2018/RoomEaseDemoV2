@@ -14,7 +14,7 @@
 .dashboard .upcoming-task-warapper-row .upcoming-task-warapper-col .upcoming-task-inner .upcoming-task-description h3 {
   font-size: 2em; }
 
-.dashboard .calendar-container .calendar {
+.dashboard .calendar-container {
   margin-bottom: 30px; }
 
 .dashboard .calendar-container .calendar .rbc-calendar .rbc-toolbar .rbc-btn-group {
