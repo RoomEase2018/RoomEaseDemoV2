@@ -31,6 +31,10 @@ class ApartmentList extends Component {
                                     src="https://react.semantic-ui.com/assets/images/avatar/small/daniel.jpg"
                                     avatar
                                 />
+                                <Image
+                                    src="https://react.semantic-ui.com/assets/images/avatar/small/christian.jpg"
+                                    avatar
+                                />
                             </span>
                         </Card.Description>
                         <Card.Description>
