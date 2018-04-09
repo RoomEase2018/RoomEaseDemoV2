@@ -70,7 +70,7 @@ class NextTask extends Component {
                     }}>
                     <FlatButton
                         value="previous"
-                        onClick={handleIndexButton}
+                        onClick={() => handleIndexButton('previous')}
                         style={{
                             backgroundColor: "#00E676",
                             color: "white",
@@ -80,7 +80,7 @@ class NextTask extends Component {
                     </FlatButton>
                     <FlatButton
                         value="next"
-                        onClick={handleIndexButton}
+                        onClick={() => handleIndexButton('next')}
                         style={{
                             marginLeft: "950px",
                             backgroundColor: "#00E676",

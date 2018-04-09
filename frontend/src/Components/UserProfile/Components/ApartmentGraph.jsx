@@ -23,7 +23,7 @@ class ApartmentGraph extends Component {
 
         this.domain = [
             [0, 100],
-            [0, 200]
+            [0, 150]
         ]
 
         this.title = [
