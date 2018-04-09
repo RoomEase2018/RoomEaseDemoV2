@@ -2,7 +2,7 @@ import update from "react-addons-update"
 
 const defaultState = {
   loggedIn: false,
-  username: "Ryry",
+  username: "Ryan",
   user_id: 1,
   apt_id: 1,
   pic: "https://react.semantic-ui.com/assets/images/avatar/large/elliot.jpg", //"https://demos.subinsb.com/isl-profile-pic/image/person.png",

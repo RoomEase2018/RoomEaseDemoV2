@@ -14,17 +14,17 @@ class ApartmentList extends Component {
                     </Card.Content>
                     <Card.Content className="apartment-name-wrapper">
                         <Card.Description className="apartment-name">
-                            Koala Bears (3 Members){" "}
+                            <span style={{fontSize: "2em"}}>Koala Bears</span>{" "}
                             <span className='pics' >
                                 <Image src="https://react.semantic-ui.com/assets/images/avatar/small/elliot.jpg" avatar /> {" "}
                                 <Image src="https://react.semantic-ui.com/assets/images/avatar/small/matthew.png" avatar /> {" "}
                                 <Image src="https://react.semantic-ui.com/assets/images/avatar/small/daniel.jpg" avatar />
                             </span>
                         </Card.Description>
-                        <Card.Description>
-                            <h3>Apartment Goals</h3>
+                        {/* <Card.Description> */}
+                            <h3>Koala Bears' Goals</h3>
                             <ApartmentGoals />
-                        </Card.Description>
+                        {/* </Card.Description> */}
                     </Card.Content>
                 </Card>
             </Grid.Column>
