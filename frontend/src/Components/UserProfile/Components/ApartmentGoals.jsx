@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { connect } from "react-redux";
 
 const mapStateToProps = state => {
@@ -10,31 +10,44 @@ const mapStateToProps = state => {
 
 class ApartmentGoals extends Component {
   constructor() {
-  	super();
-		this.apartmentKarma = 120;
+    super();
 
-		this.redeemGoal = e => {
-			console.log(e)
-		}
+    this.state = {
+      apartmentKarma: 343,
+      display: ""
+    };
   }
 
+  handleRedeem = e => {
+    let { apartmentKarma } = this.state;
+    if (e.target.name === "0") {
+      this.setState({
+        apartmentKarma: apartmentKarma - e.target.value,
+        display: "none"
+      });
+    }
+  };
+
   render() {
-  	console.log(this.props.completedTasks)
-  	if (this.props.completedTasks.length) {
-  		this.apartmentKarma = this.props.completedTasks.reduce((acc, el) => {
-  			return acc + el.karma;
-  		}, this.props.completedTasks[0].karma)
-  	}
+    const { handleRedeem } = this;
+    const { apartmentKarma, goalRedeemed } = this.state;
+    if (this.props.completedTasks.length) {
+      this.apartmentKarma = this.props.completedTasks.reduce((acc, el) => {
+        return acc + el.karma;
+      }, this.props.completedTasks[0].karma);
+    }
     return (
       <div>
-      	<h3>Total karma: {this.apartmentKarma}</h3>
-				{this.props.goals.map(goal => (
-					<div>
-						<div>{goal.title}</div>
-						<div>Total Karma Needed: {goal.karma}</div>
-            <button onClick={this.redeemGoal}>Redeem</button>
-					</div>
-				))}      	
+        <h3>Total karma: {apartmentKarma}</h3>
+        {this.props.goals.map((goal, index) => (
+          <div style={{ display: `${this.state.display}` }}>
+            <div>{goal.title}</div>
+            <div>Karma Needed: {goal.karma}</div>
+            <button name={index} value={goal.karma} onClick={handleRedeem}>
+              Redeem
+            </button>
+          </div>
+        ))}
       </div>
     );
   }
