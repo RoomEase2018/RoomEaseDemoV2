@@ -10,7 +10,7 @@ const mapStateToProps = state => {
 class ApartmentGoals extends Component {
     constructor(props) {
         super(props)
-        this.apartmentKarma = 120
+        this.apartmentKarma = 395
 
         this.state = {
             goals: [...props.goals]
