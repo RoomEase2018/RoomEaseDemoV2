@@ -22,8 +22,8 @@ const Badges = ({ badges }) => {
                     <List.Item>
                         <Image avatar src='https://images.vexels.com/media/users/3/127646/isolated/preview/bb4029ca0e2f6ffb36a5c80dba5e54e0-first-place-round-badge-by-vexels.png' />
                         <List.Content>
-                            <List.Header>1st KP</List.Header>
-                            You earned your first Karma Point!
+                            <List.Header>1st Karma Point</List.Header>
+                            You earned your first Karma Points!
                         </List.Content>
                     </List.Item>
                     {/* <br /> */}
@@ -31,7 +31,7 @@ const Badges = ({ badges }) => {
                         <Image avatar src='https://images.vexels.com/media/users/3/127646/isolated/preview/bb4029ca0e2f6ffb36a5c80dba5e54e0-first-place-round-badge-by-vexels.png' />
                         <List.Content>
                             <List.Header>Good Karma</List.Header>
-                            You earned 5 KP
+                            You earned 50 KP
                         </List.Content>
                     </List.Item>
                 </List>

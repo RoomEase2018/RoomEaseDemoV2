@@ -20,9 +20,9 @@ const data = [
 ];
 
 const data2 = [
-	{name: 'E to the Ric', percentage: 100},
-	{name: 'RyRy', percentage: 70},
-	{name: 'Benjy', percentage: 75},
+	{name: 'Eric', percentage: 100},
+	{name: 'Ryan', percentage: 70},
+	{name: 'Ben', percentage: 75},
 	{name: 'Aiden', percentage: 74}
 ]
 
