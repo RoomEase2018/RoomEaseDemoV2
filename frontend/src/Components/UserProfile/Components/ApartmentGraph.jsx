@@ -32,7 +32,7 @@ class ApartmentGraph extends Component {
         ]
 
         this.state = {
-            index: 0,
+            index: 1,
             data: [
                     [
                         { name: "Eric", dataPoint: 100 },
@@ -72,8 +72,8 @@ class ApartmentGraph extends Component {
                         {this.title[index]}
                     </h1>
                     <select name='jesus take the wheel' onChange={this.handleSelect}>
-                        <option value={0}>tasks</option>
-                        <option value={1}>karma</option>
+                        <option value={1}>Karma</option>
+                        <option value={0}>Tasks</option>
                     </select>
                 </div>
                 <BarChart
