@@ -9,7 +9,7 @@
   display: grid;
   grid-template-columns: auto 1000px auto;
   grid-template-areas: ". login_menu .";
-  background-color: #051923;
+  background-color: #293F3B;
   color: #a2defd; }
 
 .home .home_nav .login_menu {
