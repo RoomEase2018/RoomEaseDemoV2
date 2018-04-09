@@ -32,6 +32,7 @@ class ApartmentGoals extends Component {
         return (
             <div>
                 <h3>Total karma: {this.apartmentKarma}</h3>
+                <h3>Koala Bears' Goals</h3>
                 {this.state.goals.map((goal, i) => (
                     <div>
                         <div>{goal.title}</div>

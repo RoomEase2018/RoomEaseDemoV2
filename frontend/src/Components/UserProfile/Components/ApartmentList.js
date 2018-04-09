@@ -34,7 +34,6 @@ class ApartmentList extends Component {
                             </span>
                         </Card.Description>
                         <Card.Description>
-                            <h3>Koala Bears' Goals</h3>
                             <ApartmentGoals />
                         </Card.Description>
                     </Card.Content>
