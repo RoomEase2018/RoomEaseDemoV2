@@ -28,16 +28,6 @@ class ApartmentGoals extends Component {
     }
   }
 
-  handleRedeem = e => {
-    let { apartmentKarma } = this.state;
-    if (e.target.name === "0") {
-      this.setState({
-        apartmentKarma: apartmentKarma - e.target.value,
-        display: "none"
-      });
-    }
-  };
-
   render() {
     return (
       <div>
