@@ -6,7 +6,7 @@ const defaultState = {
   user_id: 1,
   apt_id: 1,
   pic: "https://react.semantic-ui.com/assets/images/avatar/large/elliot.jpg", //"https://demos.subinsb.com/isl-profile-pic/image/person.png",
-  roomKarma: 100,
+  roomKarma: 50,
   task: [{
     desc: "Take out the trash",
     date: "04/12/18"

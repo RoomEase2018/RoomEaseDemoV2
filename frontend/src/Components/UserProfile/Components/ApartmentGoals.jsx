@@ -8,14 +8,14 @@ const mapStateToProps = state => {
   };
 };
 
-
-
-
 class ApartmentGoals extends Component {
   constructor() {
   	super();
+		this.apartmentKarma = 120;
 
-  	this.apartmentKarma = 0;
+		this.redeemGoal = e => {
+			console.log(e)
+		}
   }
 
   render() {
@@ -31,8 +31,8 @@ class ApartmentGoals extends Component {
 				{this.props.goals.map(goal => (
 					<div>
 						<div>{goal.title}</div>
-						<div>Karma Needed: {goal.karma}</div>
-            <button>Redeem</button>
+						<div>Total Karma Needed: {goal.karma}</div>
+            <button onClick={this.redeemGoal}>Redeem</button>
 					</div>
 				))}      	
       </div>
