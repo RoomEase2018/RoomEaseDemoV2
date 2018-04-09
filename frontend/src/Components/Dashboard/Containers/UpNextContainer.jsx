@@ -103,8 +103,8 @@ class UpNextContainer extends Component {
       // console.log(this.state, this.sortedTasks)
       return (
         // className="up_next"
-        <Grid.Row>
-          <Grid.Column fluid style={{boxShadow: "2px 2px 5px black", padding: "0"}}>
+        <Grid.Row className='upcoming-task-warapper-row'>
+          <Grid.Column fluid style={{padding: "0"}} className='upcoming-task-warapper-col'>
             <NextTask 
               task={sortedTasks[index]} 
               handleIndexButton={this.handleIndexButton}

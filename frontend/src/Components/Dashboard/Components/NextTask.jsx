@@ -24,9 +24,9 @@ class NextTask extends Component {
     task.due_date = new Date(task.due_date);
     return (
       // className="next_task" id="next-task"
-      <Card fluid centered style={{ padding: "0" }}>
-        <Card.Content>
-          <Card.Header>Upcoming Task:</Card.Header>
+      <Card fluid centered style={{ padding: "0" }} className='upcoming-task-inner'>
+        <Card.Content className='upcoming-task'>
+          <Card.Header className='upcoming-task-label'>Upcoming Task:</Card.Header>
           <Card.Meta>
             {" "}
             {task.is_recurring
@@ -65,7 +65,7 @@ class NextTask extends Component {
           <FlatButton
             value="next"
             onClick={handleIndexButton}
-            style={{ marginLeft: "900px", backgroundColor: "#00E676", fontSize:"18px", color:"white"}}
+            style={{ marginLeft: "950px", backgroundColor: "#00E676", fontSize:"18px", color:"white"}}
           >
             Next
           </FlatButton>

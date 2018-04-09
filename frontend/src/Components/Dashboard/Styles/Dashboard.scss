@@ -4,30 +4,36 @@
     display: grid;
     justify-items: center;
     grid-row-gap: 20px;
-
-    .up_next {
-        background-color: white;
-        border: $all-borders;
-        height: 200px;
-        width: 1000px;
-        display: grid;
-        align-items: center;
-        justify-items: center;
-        grid-template-columns: auto 100px 750px 150px auto;
-        grid-template-areas: ". progress_bar next_task checkbox .";
-        box-shadow: $all-box-shadow;
-        .progress_bar {
-            grid-area: progress_bar;
-            height: 100px;
-            width: 100px;
-            padding-left: 10px;
+    .upcoming-task-warapper-row {
+        .upcoming-task-warapper-col {
+            box-shadow: $all-box-shadow;
+            .upcoming-task-inner {
+            }
         }
-        .next_task {
-            grid-area: next_task;
-            font-size: 50px;
-            text-align: center;
-            line-height: 1em;
-            width: 600px;
+    }
+    // .up_next {
+        // background-color: white;
+        // border: $all-borders;
+        // height: 200px;
+        // width: 1000px;
+        // display: grid;
+        // align-items: center;
+        // justify-items: center;
+        // grid-template-columns: auto 100px 750px 150px auto;
+        // grid-template-areas: ". progress_bar next_task checkbox .";
+        // box-shadow: $all-box-shadow;
+        // .progress_bar {
+        //     grid-area: progress_bar;
+        //     height: 100px;
+        //     width: 100px;
+        //     padding-left: 10px;
+        // }
+        // .next_task {
+        //     grid-area: next_task;
+        //     font-size: 50px;
+        //     text-align: center;
+        //     line-height: 1em;
+        //     width: 600px;
             p {
                 margin: 0;
                 text-shadow: 1px 1px 3px #888;

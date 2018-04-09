@@ -39,7 +39,7 @@ class Calendar extends Component {
         <Grid.Column className='calendar'>
           <BigCalendar
             events={events}
-            views={["week", "month", "agenda"]}
+            views={["week", "month"]}
             defaultView={"week"}
             step={60}
             showMultiDayTimes

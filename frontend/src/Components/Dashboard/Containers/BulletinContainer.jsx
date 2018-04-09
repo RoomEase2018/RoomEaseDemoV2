@@ -32,6 +32,7 @@ class Bulletin extends Component {
         // console.log(notes);
         return (
             <div className="bulletin">
+                <h1> Apartment Bulletin </h1>
                 {notes.map((note, i) => (
                     <Note
                         message={note.message}

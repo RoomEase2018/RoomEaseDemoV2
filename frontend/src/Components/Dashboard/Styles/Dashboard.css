@@ -15,12 +15,6 @@
   grid-template-areas: ". progress_bar next_task checkbox .";
   box-shadow: 2px 2px 5px black; }
 
-.dashboard .up_next .progress_bar {
-  grid-area: progress_bar;
-  height: 100px;
-  width: 100px;
-  padding-left: 10px; }
-
 .dashboard .up_next .next_task {
   grid-area: next_task;
   font-size: 50px;
