@@ -39,9 +39,17 @@ class ApartmentGraph extends Component {
 
     render() {
         return (
-            <div style={{backgroundColor: "white", marginRight: "12px", border: "1px solid #D4D4D5", borderRadius: "5px"}}>
+            <div
+                style={{
+                    backgroundColor: "white",
+                    marginRight: "12px",
+                    border: "1px solid #D4D4D5",
+                    borderRadius: "5px"
+                }}>
                 <div>
-                    <h1 style={{lineHeight: "1.5em"}}>Percentage of tasks done on time</h1>
+                    <h1 style={{ lineHeight: "1.5em" }}>
+                        Percentage of tasks done on time
+                    </h1>
                 </div>
                 <BarChart
                     width={550}

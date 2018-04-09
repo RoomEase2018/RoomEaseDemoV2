@@ -1,7 +1,9 @@
 .userProfile {
     height: 100%;
-    .profile { //ui centereed container
-        div { // centered stretched
+    .profile {
+        //ui centereed container
+        div {
+            // centered stretched
             div:nth-child(2) {
                 .list {
                     .item:not(:first-child) {
@@ -11,14 +13,19 @@
                 }
             }
         }
-        div:nth-child(2) { // stretched row
-            div { // stretch column
-                div { //UI Fluid
-                    div:nth-child(2) { // content
+        div:nth-child(2) {
+            // stretched row
+            div {
+                // stretch column
+                div {
+                    //UI Fluid
+                    div:nth-child(2) {
+                        // content
                         align-items: center;
-                        .description { // description
+                        .description {
+                            // description
                             line-height: 2em;
-                            .pics{
+                            .pics {
                                 // display: flex;
                                 float: right;
                                 img {
