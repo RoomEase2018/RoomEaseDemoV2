@@ -20,6 +20,17 @@ yarn install
 yarn start
 ```
 
+user login: 
+
+username:
+```
+ryry
+```
+password:
+```
+Password123
+```
+
 created by Aiden Shih, Eric Liu, Ruben Profit and Ryan Omoruyi
 
 RoomEase©
