@@ -2,7 +2,13 @@
 
 A web application for roommates to manage their apartment by adding and completing tasks, expenses and chores for karma points which can be redeemed for group chosen goals.
 
-Install npm packages and seed database:
+## Dashboard
+![Image of Homepage](./assets/dashboard.png)
+
+## Profile
+![Image of Profile](./assets/profile.png)
+
+## Install npm packages and seed database:
 
 ```
 cd backend
@@ -20,17 +26,21 @@ yarn install
 yarn start
 ```
 
-user login: 
+## user login: 
 
-username:
+### username:
 ```
 ryry
 ```
-password:
+### password:
 ```
 Password123
 ```
 
-created by Aiden Shih, Eric Liu, Ruben Profit and Ryan Omoruyi
+## created by:
+- Aiden Shih
+- Eric Liu
+- Ruben Profit
+- Ryan Omoruyi
 
-RoomEase©
+## RoomEase©
